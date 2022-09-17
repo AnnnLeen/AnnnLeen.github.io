@@ -19,7 +19,7 @@
  	<li><a href="ftp://somesite.ru/somefile.txt">Файл somefile.txt (без авторизации)</a></li>
  	<li><a href="ftp://nickname:password@somesite.ru/somefile.txt">Файл somefile.txt (с авторизацией)</a></li>
  	<li><a href="https://ru.wikipedia.org/wiki/%D0%95%D0%BB%D0%B8%D0%B7%D0%B0%D0%B2%D0%B5%D1%82%D0%B0_II#:~:text=%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8-,%D0%94%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%BE%20%D0%B8%20%D1%8E%D0%BD%D0%BE%D1%81%D1%82%D1%8C,-%D0%A1%D1%82%D0%B0%D1%80%D1%88%D0%B0%D1%8F%20%D0%B4%D0%BE%D1%87%D1%8C%20%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B0">Ссылка на фрагмент Википедии о детстве Елизаветы II</a></li>
- 	<li><a href=#forma>Ссылка на форму</a></li>
+ 	<li><a href=#forma>Фрагмент текущей страницы (ссылка на форму)</a></li>
  	<li><a href="http://example.com?product=2020&utm_source=google">Ссылка с двумя параметрами в URL</a></li>
  	<li>Навигация по сайту:
  		<nav>
@@ -33,7 +33,7 @@
  	<li><a href="">Ссылка с пустым href</a></li>
  	<li><a href="https://example.com" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
  	<li><noindex><a href="https://example.com">Ссылка, запрещенная для индексации поисковиками</a></noindex></li>
- 	<li>.</li>
+ 	<li><a name="context"></a><p>Язык гипертекстовой разметки <a title="контекстная в тексте абзаца" href="https://ru.wikipedia.org/wiki/HTML">HTML</a> был разработан британским учёным Тимом Бернерсом-Ли приблизительно в 1986—1991 годах в стенах ЦЕРНа в Женеве в Швейцарии.</p></li>
  	<li><a href="https://www.kubsu.ru/"><img src="https://upload.wikimedia.org/wikipedia/ru/0/07/Kubsu_logo.gif" title="Ссылка-изображение" alt="Эмблема КубГУ" width="100px"></a></li>
 
  	<li>      
@@ -54,13 +54,10 @@
         </map></li>
         <li><a href="page1.html">Страница в текущем каталоге</a></li>
         <li><a href="about/page2.html">Ссылка на страницу в каталоге about</a></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-
-
+        <li><a href="../page3.html">Каталог уровнем выше текущего</a></li>
+        <li><a href="../../page4.html">Каталог на 2 уровня выше текущего</a></li>
+        <li><a href="/index.html">Сокращенная ссылка на главную</a></li>
+        <li><a href="/page1.html">Сокращенная ссылка на внутреннюю</a></li>
 
  </ol>
 
@@ -130,9 +127,6 @@
         <textarea name="field-name-2">Напишите свою биографию</textarea>
       </label><br />
 
-
- 
-
       <br />
       <label><input type="checkbox" checked="checked"
         name="check-1" />
@@ -141,8 +135,6 @@
 
       <input type="submit" value="Отправить" />
     </form>
-
-
 
 
 </body>
