@@ -85,11 +85,10 @@ h1 {
 table {
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   font-size: 14px;
-  background: white;
   max-width: 70%;
   width: 70%;
   border-collapse: collapse;
-  text-align: left;
+  text-align: center;
 }
 th {
   font-weight: normal;
@@ -98,13 +97,19 @@ th {
   padding: 10px 8px;
 }
 td {
-  color: #ca7978;
   padding: 9px 8px;
   transition: .3s linear;
 }
-tr:hover td {
-  color: #ca7978;
+
+
+tr:nth-child(odd) {
+background-color: #a35252;
 }
+
+tr:nth-child(even) {
+background-color: #ffdff0;
+}
+
 
 .footer {
 	width: 100%;
