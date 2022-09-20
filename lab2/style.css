@@ -21,7 +21,7 @@ a:hover {
 }
 
 div {
-	width:100%;
+	width: 100%;
 	padding: 10px;
 }
 
@@ -32,12 +32,12 @@ div {
 .header {
 	width: 100%;
 	height: 190px;
-	background:#fcc5ce;
+	background: #fcc5ce;
 }
 
 .p {
-	background-color:#fcc5ce;
-	padding:10px;
+	background-color: #fcc5ce;
+	padding-top: 60px;
 	font-size: 170%;
 }
 
