@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   background-color: #696363;
 
+
 }
 
 #main-aside-wrapper header, #main-aside-wrapper nav, #main-aside-wrapper list, #main-aside-wrapper tabl, #main-aside-wrapper form, #main-aside-wrapper footer  {
@@ -15,6 +16,8 @@
 
 #main-aside-wrapper list, #main-aside-wrapper tabl, #main-aside-wrapper form {
 background-color: #fcc5ce; 
+font-size: 180%;
+padding: 10%;
 }
 
 
@@ -22,12 +25,17 @@ background-color: #fcc5ce;
 	background-color: #fcc5ce;
   flex: 1;
   order: 1;
+  font-size: 200%;
+  padding-top: 55px;
+
 }
+
 #main-aside-wrapper nav {
 	text-align: center;
 	background-color: #cb7978; 
   flex: 1;
   order: 2;
+  font-size: 270%;
 }
 
 #main-aside-wrapper list {
@@ -47,7 +55,8 @@ background-color: #fcc5ce;
 
 #main-aside-wrapper footer {
 	color: white;
-	background-color: #2e2e2e; 
+	background-color: #2e2e2e;
+	font-size: 150%;
   flex: 1;
   order: 6;
 
@@ -84,4 +93,14 @@ a:active {
 
 a:hover {
   color: #ff8ca7;
+}
+
+h1 {
+	text-align: center;
+	font-size: 150%;
+}
+
+h2 {
+	text-align: center;
+	font-size: 110%;
 }
