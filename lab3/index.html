@@ -12,17 +12,17 @@
     <div id="main-aside-wrapper">
       
       <header>
-        <img style="float:left; margin:15px; width:380px; margin-left: 50px;" src="picture.png" alt="Logo" />
+        <img class="logo" src="picture.png" alt="Logo" />
         <h1>Практическое задание №2</h1>
       </header>
 
 
-      <nav><p><a href=#links>Гиперссылки</a>
-      <p><a href=#tabl>Таблица</a>
-      <p><a href=#form>Форма</a></nav>
+      <nav><p><a href=#links>Гиперссылки</a></p>
+      <p><a href=#tabl>Таблица</a></p>
+      <p><a href=#forma>Форма</a></p></nav>
 
 
-      <list><h1 id="links">Список гиперссылок</h1>
+      <list><h2 id="links">Список гиперссылок</h2>
 
     <ol>
   <li><a href="http://example.com">Главная страница сайта example.com</a></li>
@@ -43,19 +43,18 @@
   <li><a href="https://example.com" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
   <li> <!--noindex--><a href="https://example.com">Ссылка, запрещенная для индексации поисковиками</a><!--/noindex--> </li>
   <li><a id="context"></a><p>Язык гипертекстовой разметки <a title="контекстная в тексте абзаца" href="https://ru.wikipedia.org/wiki/HTML">HTML</a> был разработан британским учёным Тимом Бернерсом-Ли приблизительно в 1986—1991 годах в стенах ЦЕРНа в Женеве в Швейцарии.</p></li>
-  <li><a href="https://www.kubsu.ru/"><img src="https://upload.wikimedia.org/wikipedia/ru/0/07/Kubsu_logo.gif" title="Ссылка-изображение" alt="Эмблема КубГУ" width="100"></a></li>
+  <li><a href="https://www.kubsu.ru/"><img class="picture" src="https://upload.wikimedia.org/wikipedia/ru/0/07/Kubsu_logo.gif" title="Ссылка-изображение" alt="Эмблема КубГУ"></a></li>
 
   <li>      
-            <img src="https://i.ibb.co/YjJ1HqV/photo-2022-09-11-18-15-02.jpg" alt="Github picture" usemap="#github" title="Ссылки из круглых областей картинки"
-                width="150">
+            <img class="picture" src="https://i.ibb.co/YjJ1HqV/photo-2022-09-11-18-15-02.jpg" alt="Github picture" usemap="#github" title="Ссылки из круглых областей картинки">
         
         <map name="github">
             <area shape="circle" coords = "75,75,60" href="https://github.com/" title="Ссылки из круглых областей картинки"
                 alt="github">
         </map>
 
-            <img src="https://gitlab.com/uploads/-/system/project/avatar/278964/project_avatar.png" title="Ссылки из прямоугольных областей картинки"
-             alt="gitlab" usemap="#gitlab" width="150">
+            <img class="picture" src="https://gitlab.com/uploads/-/system/project/avatar/278964/project_avatar.png" title="Ссылки из прямоугольных областей картинки"
+             alt="gitlab" usemap="#gitlab">
 
         <map name="gitlab">
             <area shape="rect" coords="27,25,120,100" title="Ссылки из прямоугольных областей картинки"
@@ -72,10 +71,87 @@
 </list>
 
 
-      <tabl>Таблица</tabl>
+      <tabl><h2 id="tabl">Таблица</h2>
+<table>
+<tr><th>Сотрудник</th><th>Зарплата</th><th>Премия</th><th>Руководитель</th></tr>
+<tr><td>Джеймс МакЭвой</td><td>$450</td><td>$70</td><td>Сара</td></tr>
+<tr><td>Джозефина Тан</td><td>$250</td><td>-</td><td>Энни</td></tr>
+<tr><td>Эн Минг</td><td>$230</td><td>$35</td><td>Эндрю</td></tr>
+<tr><td>Стивен Смит</td><td>$195</td><td>$15</td><td>Милли</td></tr>
+</table></tabl>
 
 
-      <form>Форма</form>
+      <forma>
+
+        <h2 id="forma">Форма</h2>
+     <br>
+     <form action="/"
+      method="POST">
+
+      <label>
+        Имя:<br />
+        <input name="field-name-1"
+          value="Введите имя" />
+      </label><br />
+      <p></p>
+
+      <label>
+        Email:<br />
+        <input name="field-email"
+          type="email"
+          placeholder="Введите вашу почту" />
+      </label><br />
+      <p></p>
+
+      <label>
+        Дата рождения:<br />
+        <input id="date" type="date" name="UserDate" required>
+      </label><br />
+      <p></p>
+
+      Пол:<br />
+      <label><input type="radio" checked="checked"
+        name="radio-group-1" value="Мужской" />
+        Мужской</label>
+      <label><input type="radio"
+        name="radio-group-1" value="Женский" />
+        Женский</label><br />
+<p></p>
+        Количество конечностей:<br />
+      <label><input type="radio" checked="checked"
+        name="radio-group-2" value="1" />
+        1</label>
+      <label><input type="radio"
+        name="radio-group-2" value="2" />
+        2</label>
+        <label><input type="radio"
+        name="radio-group-2" value="3" />
+        3</label>
+        <br />
+<p></p>
+ <label>Сверхспособности:
+        <br />
+        <select name="field-name-4[]"
+          multiple="multiple">
+          <option value="Значение1">Бессмертие</option>
+          <option value="Значение2" selected="selected">Прохождение сквозь стены</option>
+          <option value="Значение3" selected="selected">Левитация</option>
+        </select>
+      </label><br />
+<p></p>
+<label>
+        Биография:<br />
+        <textarea name="field-name-2">Напишите свою биографию</textarea>
+      </label><br />
+      <br />
+      <label><input type="checkbox" checked="checked"
+        name="check-1" />
+        С контрактом ознакомлен(а)</label><br />
+<p></p>
+      <input type="submit" value="Отправить" />
+    </form>
+
+      </forma>
 
 
       <footer>(c) Ангелина Василенко 2022</footer>
@@ -85,4 +161,4 @@
 
   </body>
 
-</html>
+</html> 
