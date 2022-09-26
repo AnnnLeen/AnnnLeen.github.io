@@ -15,18 +15,17 @@
 
 #main-aside-wrapper list, #main-aside-wrapper tabl, #main-aside-wrapper forma {
 background-color: #fcc5ce; 
-font-size: 75%;
+font-size: 78%;
 padding: 9%;
 }
 
 
 #main-aside-wrapper header {
 	background-color: #fcc5ce;
-	height: 150px;
-  flex: 1;
+	height: 280px;
+	padding-top: 70px;
   order: 1;
-  font-size: 190%;
-  padding-top: 30px;
+  font-size: 185%;
 
 }
 
@@ -57,15 +56,15 @@ padding: 9%;
 #main-aside-wrapper footer {
 	color: white;
 	background-color: #2e2e2e;
-	font-size: 150%;
+	font-size: 190%;
   flex: 1;
   order: 6;
-  height: 100px;
+  height: 170px;
 
 }
 
 .logo {
-	float:left; margin:1px; width:380px; margin-left: 50px;
+	float:left; margin:5px; width:385px; margin-left: 53px; margin-top: auto;
 }
 
 .picture {
@@ -136,7 +135,7 @@ h2 {
 table {
 	margin: auto;
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-  font-size: 14px;
+  font-size: 30px;
   max-width: 70%;
   width: 70%;
   border-collapse: collapse;
