@@ -1,1 +1,87 @@
+#main-aside-wrapper {
+  display: flex;
+  min-height: 500px;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #696363;
 
+}
+
+#main-aside-wrapper header, #main-aside-wrapper nav, #main-aside-wrapper list, #main-aside-wrapper tabl, #main-aside-wrapper form, #main-aside-wrapper footer  {
+  margin: 0;
+  padding: 1%;
+}
+
+#main-aside-wrapper list, #main-aside-wrapper tabl, #main-aside-wrapper form {
+background-color: #fcc5ce; 
+}
+
+
+#main-aside-wrapper header {
+	background-color: #fcc5ce;
+  flex: 1;
+  order: 1;
+}
+#main-aside-wrapper nav {
+	text-align: center;
+	background-color: #cb7978; 
+  flex: 1;
+  order: 2;
+}
+
+#main-aside-wrapper list {
+  flex: 1;
+  order: 3;
+}
+
+#main-aside-wrapper tabl {
+  flex: 1;
+  order: 4;
+}
+
+#main-aside-wrapper form {
+  flex: 1;
+  order: 5;
+}
+
+#main-aside-wrapper footer {
+	color: white;
+	background-color: #2e2e2e; 
+  flex: 1;
+  order: 6;
+
+}
+
+
+/*@media screen and (min-width: 800px) {
+  #main-aside-wrapper {
+    flex-direction: row;
+  }*/
+}
+
+
+
+html {
+	font-family: Georgia;
+}
+
+body {
+	margin: 0;
+}
+
+
+a:link {
+  color: #453834;
+}
+a:visited {
+  color: #a35252;
+}
+
+a:active {
+  color: #ffdff0;
+} 
+
+a:hover {
+  color: #ff8ca7;
+}
