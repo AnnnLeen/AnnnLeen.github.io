@@ -36,6 +36,7 @@ padding: 9%;
   font-size: 290%;
 }
 
+
 #main-aside-wrapper list {
   flex: 1;
   order: 3;
@@ -104,7 +105,10 @@ body {
 
 a:link {
   color: #453834;
+  text-decoration: none;
+  transition: 0.4s ease-in-out;
 }
+
 a:visited {
   color: #a35252;
 }
@@ -150,7 +154,6 @@ td {
   padding: 9px 8px;
   transition: .3s linear;
 }
-
 
 tr:nth-child(odd) {
 background-color: #a35252;
@@ -240,7 +243,5 @@ h2 {
   height: 45px;
 
 }
-
-
 
 }
