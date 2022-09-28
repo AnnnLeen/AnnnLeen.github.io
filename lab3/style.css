@@ -5,7 +5,6 @@
   flex-wrap: wrap;
   background-color: #696363;
 
-
 }
 
 #main-aside-wrapper header, #main-aside-wrapper nav, #main-aside-wrapper list, #main-aside-wrapper tabl, #main-aside-wrapper forma, #main-aside-wrapper footer  {
@@ -30,8 +29,8 @@ padding: 9%;
 }
 
 #main-aside-wrapper nav {
-	text-align: center;
 	background-color: #cb7978; 
+	text-align: center;
   flex: 1;
   order: 2;
   font-size: 290%;
@@ -43,15 +42,14 @@ padding: 9%;
 }
 
 #main-aside-wrapper tabl {
-  flex: 1;
-  order: 5;
+  order: 4;
 }
 
 #main-aside-wrapper forma {
-	line-height: 1.5;
-	flex: 1;
-  order: 4;
+	line-height: 1;
+  order: 5;
 }
+
 
 #main-aside-wrapper footer {
 	color: white;
@@ -62,6 +60,12 @@ padding: 9%;
   height: 170px;
 
 }
+
+#n ul {
+list-style: none;
+justify-content: space-around;
+}
+
 
 .logo {
 	float:left; margin:5px; width:385px; margin-left: 53px; margin-top: auto;
@@ -89,14 +93,6 @@ option {
 }
 
 
-/*@media screen and (min-width: 800px) {
-  #main-aside-wrapper {
-    flex-direction: row;
-  }*/
-}
-
-
-
 html {
 	font-family: Georgia;
 }
@@ -121,15 +117,18 @@ a:hover {
   color: #ff8ca7;
 }
 
-h1 {
+.headtext {
 	text-align: center;
 	font-size: 150%;
+	padding-top: 90px;
 }
 
 h2 {
 	text-align: center;
 	font-size: 110%;
 }
+
+ .li1 {display: block;}
 
 
 table {
@@ -159,4 +158,87 @@ background-color: #a35252;
 
 tr:nth-child(even) {
 background-color: #ffdff0;
+}
+
+@media screen and (min-width: 800px) and (orientation: landscape) {
+
+#main-aside-wrapper list, #main-aside-wrapper tabl, #main-aside-wrapper forma {
+  margin-left: 14%;
+  margin-right: 14%;
+  margin-top: 0;
+}
+
+#main-aside-wrapper list, #main-aside-wrapper tabl, #main-aside-wrapper forma {
+font-size: 100%;
+padding: 30px;
+}
+
+.logo {
+	margin:10px; width:200px; margin-left: 150px;
+}
+
+#main-aside-wrapper header {
+	height: 170px;
+	padding-top: 10px;
+  font-size: 170%;
+  font-family: Georgia;
+}
+
+#main-aside-wrapper nav {
+    width: 700px;
+    height: 75px;
+    margin: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 110%;
+}
+
+#main-aside-wrapper forma {
+	line-height: 1;
+	flex: 1;
+  order: 4;
+  margin-bottom: 3%;
+}
+
+.headtext {
+	font-size: 100%;
+	padding-top: 60px;
+	text-align: left;
+}
+
+input {
+    font-size: 14px;
+}
+
+textarea {
+    font-size: 14px;
+}
+
+option {
+    font-size: 14px;
+}
+
+
+table {
+  font-size: 14px;
+}
+
+.picture {
+	width:150px;
+}
+
+h2 {
+	font-size: 150%;
+}
+
+ .li1 {
+ 	display: inline;
+ }
+
+#main-aside-wrapper footer {
+	font-size: 100%;
+  height: 45px;
+
+}
+
 }
