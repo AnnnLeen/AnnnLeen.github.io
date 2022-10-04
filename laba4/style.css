@@ -2,9 +2,11 @@ html {
 	font-family: Georgia;
 }
 
+.container-fluid {
+  background-color: #696363; }
 
 header {
-    font-size: 270%;
+    font-size: 260%;
 }
 
 .headtext {
@@ -43,13 +45,10 @@ list-style: none;
 justify-content: space-around;
 }
 
-.container-fluid {
-  background-color: #696363;
-
-}
 
 .logo {
-	float:left; width:375px;
+	float:left;
+  width:375px;
 }
 
 .picture {
