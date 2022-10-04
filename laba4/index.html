@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Lab4</title>
+	<link rel="stylesheet" href="style.css" type="text/css"/>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+	<div class="container-fluid">
+
+  <header class="row">
+    <div class="col-12" ><div class="block1">
+        <img class="logo" src="picture.png" alt="Logo">
+        <div class="headtext">Практическое задание №4</div>
+    </div></div>
+</header>
+
+
+  <nav class="row justify-content-center"><div class="col-xs-12 col-lg-8">
+    <div class="block2">
+
+        <ul>
+      <li class="li1"><a href=#links>Гиперссылки</a></li>
+      <li class="li1"><a href=#tabl>Таблица</a></li>
+      <li class="li1"><a href=#forma>Форма</a></li>
+    </ul>
+
+    </div>
+</div></nav>
+
+  <div class="row justify-content-center"><div class="col col-lg-10">
+  <div class="block3">
+    <h2 id="links">Список гиперссылок</h2>
+      <ol>
+  <li><a href="http://example.com">Главная страница сайта example.com</a></li>
+  <li><a href="https://example.com">Главная страница сайта example.com в протоколе https</a></li>
+  <li><a href="ftp://somesite.ru/somefile.txt">Файл somefile.txt (без авторизации)</a></li>
+  <li><a href="ftp://nickname:password@somesite.ru/somefile.txt">Файл somefile.txt (с авторизацией)</a></li>
+  <li><a href="https://ru.wikipedia.org/wiki/%D0%95%D0%BB%D0%B8%D0%B7%D0%B0%D0%B2%D0%B5%D1%82%D0%B0_II#:~:text=%D0%A1%D1%81%D1%8B%D0%BB%D0%BA%D0%B8-,%D0%94%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%BE%20%D0%B8%20%D1%8E%D0%BD%D0%BE%D1%81%D1%82%D1%8C,-%D0%A1%D1%82%D0%B0%D1%80%D1%88%D0%B0%D1%8F%20%D0%B4%D0%BE%D1%87%D1%8C%20%D0%BF%D1%80%D0%B8%D0%BD%D1%86%D0%B0">Ссылка на фрагмент Википедии о детстве Елизаветы II</a></li>
+  <li><a href=#forma>Фрагмент текущей страницы (ссылка на форму)</a></li>
+  <li><a href="http://example.com?product=2020&utm_source=google">Ссылка с двумя параметрами в URL</a></li>
+  <li>Навигация по сайту:
+      <ul>
+        <li><a href=#list title="Список">Список гиперссылок</a></li>
+        <li><a href=#forma title="Форма">Форма</a></li>
+      </ul>
+  </li>
+  <li><a>https://www.kubsu.ru/</a></li>
+  <li><a href="">Ссылка с пустым href</a></li>
+  <li><a href="https://example.com" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
+  <li> <!--noindex--><a href="https://example.com">Ссылка, запрещенная для индексации поисковиками</a><!--/noindex--> </li>
+  <li><a id="context"></a><p>Язык гипертекстовой разметки <a title="контекстная в тексте абзаца" href="https://ru.wikipedia.org/wiki/HTML">HTML</a> был разработан британским учёным Тимом Бернерсом-Ли приблизительно в 1986—1991 годах в стенах ЦЕРНа в Женеве в Швейцарии.</p></li>
+  <li><a href="https://www.kubsu.ru/"><img class="picture" src="https://upload.wikimedia.org/wikipedia/ru/0/07/Kubsu_logo.gif" title="Ссылка-изображение" alt="Эмблема КубГУ"></a></li>
+
+  <li>      
+            <img class="picture" src="https://i.ibb.co/YjJ1HqV/photo-2022-09-11-18-15-02.jpg" alt="Github picture" usemap="#github" title="Ссылки из круглых областей картинки">
+        
+        <map name="github">
+            <area shape="circle" coords = "75,75,60" href="https://github.com/" title="Ссылки из круглых областей картинки"
+                alt="github">
+        </map>
+
+            <img class="picture" src="https://gitlab.com/uploads/-/system/project/avatar/278964/project_avatar.png" title="Ссылки из прямоугольных областей картинки"
+             alt="gitlab" usemap="#gitlab">
+
+        <map name="gitlab">
+            <area shape="rect" coords="27,25,120,100" title="Ссылки из прямоугольных областей картинки"
+                href="https://about.gitlab.com/" alt="gitlab">
+        </map></li>
+        <li><a href="page1.html">Страница в текущем каталоге</a></li>
+        <li><a href="about/page2.html">Ссылка на страницу в каталоге about</a></li>
+        <li><a href="../page3.html">Каталог уровнем выше текущего</a></li>
+        <li><a href="../../page4.html">Каталог на 2 уровня выше текущего</a></li>
+        <li><a href="/index.html">Сокращенная ссылка на главную</a></li>
+        <li><a href="/page1.html">Сокращенная ссылка на внутреннюю</a></li>
+
+ </ol>
+  </div>
+</div></div>
+
+  <div class="row justify-content-center"><div class="col-lg-10">
+  <div class="block4">
+      <h2 id="tabl">Таблица</h2>
+<table>
+<tr><th>Сотрудник</th><th>Зарплата</th><th>Премия</th><th>Руководитель</th></tr>
+<tr><td>Джеймс МакЭвой</td><td>$450</td><td>$70</td><td>Сара</td></tr>
+<tr><td>Джозефина Тан</td><td>$250</td><td>-</td><td>Энни</td></tr>
+<tr><td>Эн Минг</td><td>$230</td><td>$35</td><td>Эндрю</td></tr>
+<tr><td>Стивен Смит</td><td>$195</td><td>$15</td><td>Милли</td></tr>
+</table></tabl>
+  </div>
+  </div></div>
+
+  <div class="row justify-content-center"><div class="col-lg-10">
+  <div class="block5">
+      <h2 id="forma">Форма</h2>
+     <br>
+     <form action="/"
+      method="POST">
+
+      <label>
+        Имя:<br />
+        <input name="field-name-1"
+          value="Введите имя" />
+      </label><br />
+      <p></p>
+
+      <label>
+        Email:<br />
+        <input name="field-email"
+          type="email"
+          placeholder="Введите вашу почту" />
+      </label><br />
+      <p></p>
+
+      <label>
+        Дата рождения:<br />
+        <input id="date" type="date" name="UserDate" required>
+      </label><br />
+      <p></p>
+
+      Пол:<br />
+      <label><input type="radio" checked="checked"
+        name="radio-group-1" value="Мужской" />
+        Мужской</label>
+      <label><input type="radio"
+        name="radio-group-1" value="Женский" />
+        Женский</label><br />
+<p></p>
+        Количество конечностей:<br />
+      <label><input type="radio" checked="checked"
+        name="radio-group-2" value="1" />
+        1</label>
+      <label><input type="radio"
+        name="radio-group-2" value="2" />
+        2</label>
+        <label><input type="radio"
+        name="radio-group-2" value="3" />
+        3</label>
+        <br />
+<p></p>
+ <label>Сверхспособности:
+        <br />
+        <select name="field-name-4[]"
+          multiple="multiple">
+          <option value="Значение1">Бессмертие</option>
+          <option value="Значение2" selected="selected">Прохождение сквозь стены</option>
+          <option value="Значение3" selected="selected">Левитация</option>
+        </select>
+      </label><br />
+<p></p>
+<label>
+        Биография:<br />
+        <textarea name="field-name-2">Напишите свою биографию</textarea>
+      </label><br />
+      <br />
+      <label><input type="checkbox" checked="checked"
+        name="check-1" />
+        С контрактом ознакомлен(а)</label><br />
+<p></p>
+      <input type="submit" value="Отправить" />
+    </form>
+  </div>
+  </div></div>
+
+  <div class="row"><div class="col-12">
+  <div class="block6">(c) Ангелина Василенко 2022</div>
+</div></div>
+
+
+  </div>
+
+
+	
+</body>
+</html>
