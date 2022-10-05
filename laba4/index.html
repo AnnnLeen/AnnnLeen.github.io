@@ -54,17 +54,17 @@
   <li><a href="https://example.com" rel="nofollow">Ссылка, по которой запрещен переход поисковикам</a></li>
   <li> <!--noindex--><a href="https://example.com">Ссылка, запрещенная для индексации поисковиками</a><!--/noindex--> </li>
   <li><a id="context"></a><p>Язык гипертекстовой разметки <a title="контекстная в тексте абзаца" href="https://ru.wikipedia.org/wiki/HTML">HTML</a> был разработан британским учёным Тимом Бернерсом-Ли приблизительно в 1986—1991 годах в стенах ЦЕРНа в Женеве в Швейцарии.</p></li>
-  <li><a href="https://www.kubsu.ru/"><img class="picture m-2" src="https://upload.wikimedia.org/wikipedia/ru/0/07/Kubsu_logo.gif" title="Ссылка-изображение" alt="Эмблема КубГУ"></a></li>
+  <li><a href="https://www.kubsu.ru/"><img width="150" class="picture m-2" src="https://upload.wikimedia.org/wikipedia/ru/0/07/Kubsu_logo.gif" title="Ссылка-изображение" alt="Эмблема КубГУ"></a></li>
 
   <li>      
-            <img class="picture m-1" src="https://i.ibb.co/YjJ1HqV/photo-2022-09-11-18-15-02.jpg" alt="Github picture" usemap="#github" title="Ссылки из круглых областей картинки">
+            <img width="200" class="picture m-1" src="https://i.ibb.co/YjJ1HqV/photo-2022-09-11-18-15-02.jpg" alt="Github picture" usemap="#github" title="Ссылки из круглых областей картинки">
         
         <map name="github">
             <area shape="circle" coords = "75,75,60" href="https://github.com/" title="Ссылки из круглых областей картинки"
                 alt="github">
         </map>
 
-            <img class="picture m-1" src="https://gitlab.com/uploads/-/system/project/avatar/278964/project_avatar.png" title="Ссылки из прямоугольных областей картинки"
+            <img width="200" class="picture m-1" src="https://gitlab.com/uploads/-/system/project/avatar/278964/project_avatar.png" title="Ссылки из прямоугольных областей картинки"
              alt="gitlab" usemap="#gitlab">
 
         <map name="gitlab">
@@ -86,13 +86,47 @@
   <div class="block4 p-5">
       <h2 id="tabl">Таблица</h2>
       <br>
-<table>
-<tr><th>Сотрудник</th><th>Зарплата</th><th>Премия</th><th>Руководитель</th></tr>
-<tr><td>Джеймс МакЭвой</td><td>$450</td><td>$70</td><td>Сара</td></tr>
-<tr><td>Джозефина Тан</td><td>$250</td><td>-</td><td>Энни</td></tr>
-<tr><td>Эн Минг</td><td>$230</td><td>$35</td><td>Эндрю</td></tr>
-<tr><td>Стивен Смит</td><td>$195</td><td>$15</td><td>Милли</td></tr>
-</table></tabl>
+
+
+<table class="table">
+  <thead>
+    <tr class="table-dark">
+      <th scope="col">Сотрудник</th>
+      <th scope="col">Зарплата</th>
+      <th scope="col">Премия</th>
+      <th scope="col">Руководитель</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-warning">
+      <th scope="row">Джеймс МакЭвой</th>
+      <td>$450</td>
+      <td>$70</td>
+      <td>Сара</td>
+    </tr>
+    <tr class="table-danger">
+      <th scope="row">Джозефина Тан</th>
+      <td>$250</td>
+      <td>-</td>
+      <td>Энни</td>
+    </tr>
+    <tr class="table-warning">
+      <th scope="row">Эн Минг</th>
+      <td>$230</td>
+      <td>$35</td>
+      <td>Эндрю</td>
+    </tr>
+    <tr class="table-danger">
+      <th scope="row">Стивен Смит</th>
+      <td>$195</td>
+      <td>$15</td>
+      <td>Милли</td>
+    </tr>
+  </tbody>
+</table>
+
+
+
   </div>
   </div></div>
 
