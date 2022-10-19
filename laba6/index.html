@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Lab5</title>
+	<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+
+	<header><h2>Практическое задание №6</h2></header>
+
+		<h3>Расчет стоимости бисера</h3>
+
+  <form>
+
+    <select name="beadsType">
+      <option value="1">Чешский</option>
+      <option value="2">Китайский</option>
+      <option value="3">Японский</option>
+    </select>
+
+    <div id="radios">
+      <label><input type="radio" name="beadsOptions" value="option1">Круглый</label>
+      <label><input type="radio" name="beadsOptions" value="option2">Квадратный</label>
+      <label><input type="radio" name="beadsOptions" value="option3">Стеклярус</label>
+    </div>
+
+    <div id="checkboxes">
+      <label><input type="checkbox" name="prColored">Цветной</label>
+      <label><input type="checkbox" name="prClear">Прозрачный</label>
+    </div>
+
+  </form>
+
+  <input id="field1" type="text" name="quantity" placeholder="Количество упаковок">
+
+  <div id="beadsPrice">Общая стоимость</div>
+
+
+<script src="app.js"></script>
+
+	
+</body>
+</html>
