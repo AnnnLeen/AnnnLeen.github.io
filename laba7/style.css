@@ -1,0 +1,28 @@
+.picture {
+    width: 150px;
+}
+
+.wrapper {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.slider-container {
+	overflow: hidden;
+	background-color: pink;
+}
+
+.slider-track {
+	display: flex;
+	background-color: yellow;
+	transition: .2s;
+}
+
+.slider-item {
+	height: 150px;
+}
+
+.slider-buttons {
+	text-align: center;
+	margin: 5px;
+}
