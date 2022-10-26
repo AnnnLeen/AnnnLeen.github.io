@@ -1,0 +1,27 @@
+body {
+	background-color: grey;
+}
+
+img {
+	width: 200px;
+}
+
+.wrapper {
+	width: 800px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+
+	img {
+	width: 100px;
+}
+
+.wrapper {
+	width: 200px;
+	margin: 0 auto;
+	padding: 0 10px;
+}
+
+}
