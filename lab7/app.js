@@ -1,3 +1,5 @@
+$(document).ready(function() {
+  console.log( "ready!" );
 $('.single-item').slick({
 	infinite: false,
 	dots: true,
@@ -13,3 +15,5 @@ $('.single-item').slick({
 	    }
     ]
 });
+
+}); 
