@@ -15,11 +15,11 @@ img {
 @media (max-width: 768px) {
 
 	img {
-	width: 100px;
+	width: 120px;
 }
 
 .wrapper {
-	width: 200px;
+	width: 240px;
 	margin: 0 auto;
 	padding: 0 10px;
 }
