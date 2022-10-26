@@ -1,19 +1,16 @@
 $(document).ready(function() {
   console.log( "ready!" );
-$('.single-item').slick({
-	infinite: false,
+$(".single-item").slick({
 	dots: true,
-	slidesToShow: 4,
+	infinite: false,
 	slidesToScroll: 2,
+	slidesToShow: 4,
 	responsive: [
 	    {
 	      breakpoint: 768,
 	      settings: {
 	        slidesToShow: 2,
-	        dots: false
-	      }
-	    }
-    ]
+	        dots: false }
+	    } ] 
 });
-
 }); 
