@@ -21,9 +21,9 @@ $(function(){
             data: $(this).serialize(),
             success: function(response){
                 if(response.status == "success"){
-                    alert("We received your submission, thank you!");
-                }else{
-                    alert("An error occured: " + response.message);
+                    alert("Спасибо, ваша заявка успешно отправлена!");
+                } else{
+                    alert("Возникла ошибка: " + response.message);
                 }
             }
         });
