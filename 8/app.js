@@ -10,22 +10,22 @@ $('.close-popup').click(function() {
 });
 
 
-  $(function(){
+$(function(){
     $(".ajaxForm").submit(function(e){
-      e.preventDefault();
-      var href = $(this).attr("action");
-      $.ajax({
-        type: "POST",
-        dataType: "json",
-        url: href,
-        data: $(this).serialize(),
-        success: function(response){
-          if(response.status == "success"){
-            alert("We received your submission, thank you!");
-          }else{
-            alert("An error occured: " + response.message);
-          }
-        }
-      });
+        e.preventDefault();
+        var href = $(this).attr("action");
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: "https://api.slapform.com/anleen27@gmail.com",
+            data: $(this).serialize(),
+            success: function(response){
+                if(response.status == "success"){
+                    alert("We received your submission, thank you!");
+                }else{
+                    alert("An error occured: " + response.message);
+                }
+            }
+        });
     });
-  });
+});
