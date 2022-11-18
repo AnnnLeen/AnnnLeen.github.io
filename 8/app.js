@@ -17,13 +17,13 @@ $(function(){
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: "https://api.slapform.com/anleen27@gmail.com",
+            url: href,
             data: $(this).serialize(),
             success: function(response){
                 if(response.status == "success"){
-                    alert("Спасибо, ваша заявка успешно отправлена!");
-                } else{
-                    alert("Возникла ошибка: " + response.message);
+                    alert("We received your submission, thank you!");
+                }else{
+                    alert("An error occured: " + response.message);
                 }
             }
         });
