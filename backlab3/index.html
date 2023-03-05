@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
 
+  <head>
+    <meta charset="UTF-8">
+    <title>Лабораторная №2</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+  </head>
+
+  <body>
+    
+<h1 id="form">Форма</h1>
+<form action="/"
+      method="POST">
+
+      <label>
+        Имя:<br />
+        <input name="field-name-1"
+          value="Введите имя" />
+      </label><br />
+      <p>
+
+      <label>
+        Email:<br />
+        <input name="field-email"
+          type="email"
+          placeholder="Введите вашу почту" />
+      </label><br />
+      <p>
+
+      <label>
+        Дата рождения:<br />
+        <input id="date" type="date" name="UserDate" required>
+      </label><br />
+      <p>
+
+      Пол:<br />
+      <label><input type="radio" checked="checked"
+        name="radio-group-1" value="Мужской" />
+        Мужской</label>
+      <label><input type="radio"
+        name="radio-group-1" value="Женский" />
+        Женский</label><br />
+<p>
+
+        Количество конечностей:<br />
+      <label><input type="radio" checked="checked"
+        name="radio-group-2" value="1" />
+        1</label>
+      <label><input type="radio"
+        name="radio-group-2" value="2" />
+        2</label>
+        <label><input type="radio"
+        name="radio-group-2" value="3" />
+        3</label>
+        <br />
+<p>
+
+ <label>
+        Сверхспособности:
+        <br />
+        <select name="field-name-4[]"
+          multiple="multiple">
+          <option value="Значение1">Бессмертие</option>
+          <option value="Значение2" selected="selected">Прохождение сквозь стены</option>
+          <option value="Значение3" selected="selected">Левитация</option>
+        </select>
+      </label><br />
+<p>
+<label>
+        Биография:<br />
+        <textarea name="field-name-2">Напишите свою биографию</textarea>
+      </label><br />
+
+      <br />
+      <label><input type="checkbox" checked="checked"
+        name="check-1" />
+        С контрактом ознакомлен(а)</label><br />
+<p>
+
+      <input type="submit" value="Отправить" />
+    </form>
+
+</div>
+</body>
+
+</html> 
