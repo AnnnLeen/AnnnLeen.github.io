@@ -1,6 +1,12 @@
 <form action="" method="POST">
-  <input name="fio" />
+  <input name="fio">
   <select name="year">
+  <input name="email">
+  <select name="gender">
+  <select name="limbs">
+  <input name="biography">
+  <select name="checkbox">
+    
     <?php 
     for ($i = 1922; $i <= 2022; $i++) {
       printf('<option value="%d">%d год</option>', $i, $i);
