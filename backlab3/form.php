@@ -33,7 +33,7 @@
     for ($i = 0; $i <= 1; $i++) {
       printf('<option value="%d">%d</option>', $i, $i);
     } ?>
-</select>
+</select><br>
   
   <input type="submit" value="ok" />
 </form>
