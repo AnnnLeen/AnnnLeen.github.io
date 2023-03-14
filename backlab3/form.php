@@ -13,6 +13,13 @@
     }
     ?>
   </select>
+    
+    <?php 
+    for ($i = 0; $i <= 4; $i++) {
+      printf('<option value="%d">%d Кол-во конечностей</option>', $i, $i);
+    }
+    ?>
+  </select>
   
   <input type="submit" value="ok" />
 </form>
