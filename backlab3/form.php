@@ -1,34 +1,34 @@
 <form action="" method="POST">
   
-  <input name="fio" />
+  Имя: <input name="fio" /><br>
   
-<select name="year">
+Год рождения: <select name="year">
      <?php 
     for ($i = 1922; $i <= 2022; $i++) {
       printf('<option value="%d">%d год</option>', $i, $i);
     } ?>
-</select>   
+</select><br>
     
-  <input name="email" />
+  E-mail: <input name="email" /><br>
   
-<select name="gender">
+Пол: <select name="gender">
     <?php 
     for ($i = 0; $i <= 1; $i++) {
       printf('<option value="%d">%d</option>', $i, $i);
     } ?>
- </select>
+ </select><br>
     
-<select name="limbs">
+Конечности: <select name="limbs">
   <?php 
     for ($i = 0; $i <= 4; $i++) {
       printf('<option value="%d">%d</option>', $i, $i);
     }
     ?>
-</select>
+</select><br>
 
-  <input name="biography" />
+Биография: <input name="biography" /><br>
     
-<select name="checkbox">
+Согласие на обработку данных: <select name="checkbox">
   <?php 
     for ($i = 0; $i <= 1; $i++) {
       printf('<option value="%d">%d</option>', $i, $i);
