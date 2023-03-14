@@ -30,6 +30,33 @@ if (empty($_POST['year']) || !is_numeric($_POST['year']) || !preg_match('/^\d+$/
   $errors = TRUE;
 }
 
+if (empty($_POST['gender']) || !is_numeric($_POST['gender']) || !preg_match('/^\d+$/', $_POST['gender'])) {
+  print('Заполните пол.<br/>');
+  $errors = TRUE;
+}
+
+if (empty($_POST['limbs']) || !is_numeric($_POST['limbs']) || !preg_match('/^\d+$/', $_POST['limbs'])) {
+  print('Заполните количество конечностей.<br/>');
+  $errors = TRUE;
+}
+
+$errors = FALSE;
+if (empty($_POST['email'])) {
+  print('Заполните почту.<br/>');
+  $errors = TRUE;
+}
+
+$errors = FALSE;
+if (empty($_POST['biography'])) {
+  print('Заполните биографию.<br/>');
+  $errors = TRUE;
+}
+
+if (empty($_POST['checkbox']) || !is_numeric($_POST['checkbox']) || !preg_match('/^\d+$/', $_POST['checkbox'])) {
+  print('Заполните чекбокс.<br/>');
+  $errors = TRUE;
+}
+
 
 // *************
 // Тут необходимо проверить правильность заполнения всех остальных полей.
