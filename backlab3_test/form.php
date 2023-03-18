@@ -32,7 +32,7 @@
     } ?>
  </select><br>
     
-Конечности: <select name="limbs">
+Конечности: <select name="limbs"> 
   <?php 
     for ($i = 0; $i <= 4; $i++) {
       printf('<option value="%d">%d</option>', $i, $i);
