@@ -54,14 +54,36 @@
 <label>
       <div class="txt">Количество конечностей:</div>
       <label><div class="raddio">
-           <input type="radio" name="limbs" id="limb1" value="2">
+           <input type="radio" name="limbs" id="limb1" value="1">
+        1<span></span></div></label>
+  
+      <label><div class="raddio">
+           <input type="radio" name="limbs" id="limb2" value="2">
         2<span></span></div></label>
+  
       <label><div class="raddio">
-           <input type="radio" name="limbs" id="limb2" value="3">
+           <input type="radio" name="limbs" id="limb3" value="3">
         3<span></span></div></label>
-      <label><div class="raddio">
-           <input type="radio" name="limbs" id="limb3" value="4">
+  
+        <label><div class="raddio">
+  <input type="radio" name="limbs" id="limb4" value="4">
         4<span></span></div></label>
+  
+  <label><div class="raddio">
+           <input type="radio" name="limbs" id="limb5" value="5">
+        5<span></span></div></label>
+  
+  <label><div class="raddio">
+           <input type="radio" name="limbs" id="limb6" value="6">
+        6<span></span></div></label>
+  
+  <label><div class="raddio">
+           <input type="radio" name="limbs" id="limb7" value="7">
+        7<span></span></div></label>
+  
+      <label><div class="raddio">
+           <input type="radio" name="limbs" id="limb8" value="8">
+        8<span></span></div></label>
 </label>
                                                                 
 <label>
