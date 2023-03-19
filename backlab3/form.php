@@ -40,31 +40,48 @@
 
 <label>
       <div class="txt">Пол:</div>
-      <select name="gender">
-    <?php 
-    for ($i = 0; $i <= 1; $i++) {
-      printf('<option value="%d">%d</option>', $i, $i);
-    } ?>
- </select>
+      <label><div class="raddio">
+        <input type="radio" name="gender" id="gender1" value="0">
+        Мужской<span></span></div></label>
+      <label><div class="raddio">
+        <input type="radio" name="gender" id="gender2" value="1>
+        Женский<span></span></div></label>
 </label>
 
 <label>
       <div class="txt">Количество конечностей:</div>
-      <select name="limbs">
-  <?php 
-    for ($i = 0; $i <= 4; $i++) {
-      printf('<option value="%d">%d</option>', $i, $i);
-    }
-    ?>
-</select>
+      <label><div class="raddio">
+           <input type="radio" name="limbs" id="limb1" value="2">
+        2<span></span></div></label>
+      <label><div class="raddio">
+           <input type="radio" name="limbs" id="limb2" value="3">
+        3<span></span></div></label>
+      <label><div class="raddio">
+           <input type="radio" name="limbs" id="limb3" value="4">
+        4<span></span></div></label>
+</label>
+                                                                
+<label>
+        <div class="txt">Сверхспособности:</div>
+        <select class="form-select" name="abilities[]" multiple="multiple">
+          <option value="immort">Бессмертие</option>
+          <option value="wall">Прохождение сквозь стены</option>
+          <option value="diff">Понимание теории диффур</option>
+          <option value="levitation">Левитация</option>
+          <option value="telek">Телекинез</option>
+          <option value="telepathy">Телепатия</option>
+        </select>
 </label>
         
 <label><div class="txt">Биография:</div>
         <textarea name="biography" placeholder="Напишите свою биографию"></textarea>
  </label>
+                                                                        
+ <label>
+    <div class="check"><input type="checkbox" name="accept" value="1">
+        С контрактом ознакомлен(а)<span1></span1></div></label>
 
-
-<div class="otpr"><label><button>Отправить!</button></label></div>
+<div class="otpr"><label><button type="submit" value="send">Отправить!</button></label></div>
     
 </form>
 
