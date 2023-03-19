@@ -46,6 +46,12 @@ if (empty($_POST['email'])) {
   $errors = TRUE;
 }
 
+/*$errors = FALSE;
+if (empty($_POST['possibilities'])) {
+  print('Заполните сверхспособности.<br/>');
+  $errors = TRUE;
+}*/
+
 $errors = FALSE;
 if (empty($_POST['biography'])) {
   print('Заполните биографию.<br/>');
