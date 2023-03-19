@@ -50,7 +50,7 @@
 
 <label>
       <div class="txt">Количество конечностей:</div>
-      <label><div class="raddio"><input type="radio" checked="checked"
+      <label><div class="raddio"><input type="radio"
         name="limbs" value="2">
         2
         <span></span></div></label>
