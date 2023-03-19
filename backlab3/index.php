@@ -58,7 +58,7 @@ if (empty($_POST['biography'])) {
   $errors = TRUE;
 }
 
-if (empty($_POST['checkbox']) || !is_numeric($_POST['checkbox']) || !preg_match('/^\d+$/', $_POST['checkbox'])) {
+if (empty($_POST['checkbox'])) {
   print('Заполните чекбокс.<br/>');
   $errors = TRUE;
 }
