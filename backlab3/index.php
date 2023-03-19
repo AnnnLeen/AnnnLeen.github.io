@@ -24,52 +24,51 @@ if (empty($_POST['fio'])) {
   print('Заполните имя.<br/>');
   $errors = TRUE;
 }
+else if (!preg_match("/^[а-яА-Яa-zA-Z ]+$/u", $_POST['fio'])) {
+    print('Некорректное имя.<br>');
+    $errors = TRUE;
+}
+
+if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    print('Некорректный email.<br>');
+    $errors = TRUE;
+}
 
 if (empty($_POST['year']) || !is_numeric($_POST['year']) || !preg_match('/^\d+$/', $_POST['year'])) {
   print('Заполните год.<br/>');
   $errors = TRUE;
 }
 
-if (empty($_POST['gender'])) {
-  print('Заполните пол.<br/>');
-  $errors = TRUE;
+/*$ability_data = ['immort', 'wall', 'diff', 'levitation', 'telek', 'telepathy'];
+if (empty($_POST['abilities'])) {
+    print('Выберите сверхспособность.<br>');
+    $errors = TRUE;
 }
-
-if (empty($_POST['limbs'])) {
-  print('Заполните количество конечностей.<br/>');
-  $errors = TRUE;
+else {
+    $abilities = $_POST['abilities'];
+    foreach ($abilities as $ability) {
+        if (!in_array($ability, $ability_data)) {
+            print('Недопустимая способность.<br>');
+            $errors = TRUE;
+        }
+    }
 }
-
-$errors = FALSE;
-if (empty($_POST['email'])) {
-  print('Заполните почту.<br/>');
-  $errors = TRUE;
-}
-
-/*$errors = FALSE;
-if (empty($_POST['possibilities'])) {
-  print('Заполните сверхспособности.<br/>');
-  $errors = TRUE;
+$ability_insert = [];
+foreach ($ability_data as $ability) {
+    $ability_insert[$ability] = in_array($ability, $abilities) ? 1 : 0;
 }*/
 
-$errors = FALSE;
 if (empty($_POST['biography'])) {
   print('Заполните биографию.<br/>');
   $errors = TRUE;
 }
 
-/*if (empty($_POST['checkbox'])) {
-  print('Заполните чекбокс.<br/>');
-  $errors = TRUE;
-}*/
-
-
-// *************
-// Тут необходимо проверить правильность заполнения всех остальных полей.
-// *************
+if (empty($_POST['accept'])) {
+    print("Вы не приняли соглашение!<br>");
+    $errors = TRUE;
+}
 
 if ($errors) {
-  // При наличии ошибок завершаем работу скрипта.
   exit();
 }
 
@@ -81,8 +80,8 @@ $db = new PDO('mysql:host=localhost;dbname=u54906', $user, $pass, [PDO::ATTR_PER
 
 // Подготовленный запрос. Не именованные метки.
 try {
-  $stmt = $db->prepare("INSERT INTO application SET name = ?, year = ?, email = ?, gender = ?, limbs = ?, biography = ?");
-  $stmt -> execute([$_POST['fio'], $_POST['year'], $_POST['email'], $_POST['gender'], $_POST['limbs'], $_POST['biography']]);
+  $stmt = $db->prepare("INSERT INTO application SET name = ?, year = ?, email = ?, gender = ?, limbs = ?, biography = ?, accept = ?");
+  $stmt -> execute([$_POST['fio'], $_POST['year'], $_POST['email'], $_POST['gender'], $_POST['limbs'], $_POST['biography'], $_POST['accept']]);
 }
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
