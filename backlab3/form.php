@@ -44,7 +44,7 @@
         name="gender" value="Male">
         Мужской<span></span></div></label>
       <label><div class="raddio"><input type="radio"
-        name="radio-group-1" value="Female">
+        name="gender" value="Female">
         Женский<span></span></div></label>
 </label>
 
@@ -55,10 +55,10 @@
         2
         <span></span></div></label>
       <label><div class="raddio"><input type="radio"
-        name="radio-group-2" value="3">
+        name="limbs" value="3">
         3<span></span></div></label>
       <label><div class="raddio"><input type="radio"
-        name="radio-group-2" value="4">
+        name="limbs" value="4">
         4<span></span></div></label>
 </label>
 
