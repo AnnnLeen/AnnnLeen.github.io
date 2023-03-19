@@ -80,7 +80,7 @@ $db = new PDO('mysql:host=localhost;dbname=u54906', $user, $pass, [PDO::ATTR_PER
 
 // Подготовленный запрос. Не именованные метки.
 try {
-  $stmt = $db->prepare("INSERT INTO application SET name = ?, year = ?, email = ?, gender = ?, limbs = ?, biography = ?, accept = ?");
+  $stmt = $db->prepare("INSERT INTO application SET fio = ?, year = ?, email = ?, gender = ?, limbs = ?, biography = ?, accept = ?");
   $stmt -> execute([$_POST['fio'], $_POST['year'], $_POST['email'], $_POST['gender'], $_POST['limbs'], $_POST['biography'], $_POST['accept']]);
 }
 catch(PDOException $e){
