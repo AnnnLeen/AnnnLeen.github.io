@@ -41,17 +41,17 @@
 <label>
       <div class="txt">Пол:</div>
       <label><div class="raddio"><input type="radio" checked="checked"
-        name="radio-group-1" value="Мужской">
+        name="gender" value="Male">
         Мужской<span></span></div></label>
       <label><div class="raddio"><input type="radio"
-        name="radio-group-1" value="Женский">
+        name="radio-group-1" value="Female">
         Женский<span></span></div></label>
 </label>
 
 <label>
       <div class="txt">Количество конечностей:</div>
       <label><div class="raddio"><input type="radio" checked="checked"
-        name="radio-group-2" value="2">
+        name="limbs" value="2">
         2
         <span></span></div></label>
       <label><div class="raddio"><input type="radio"
@@ -64,7 +64,7 @@
 
 <label>
         <div class="txt">Сверхспособности:</div>
-        <select name="field-name-4[]"
+        <select name="possibilities"
           multiple="multiple">
           <option value="poss_1">Бессмертие</option>
           <option value="poss_2">Прохождение сквозь стены</option>
@@ -79,7 +79,7 @@
         <textarea name="biography" placeholder="Напишите свою биографию"></textarea>
  </label>
 
-<label><div class="check"><input type="checkbox" name="check-1">
+<label><div class="check"><input type="checkbox" name="checkbox">
         С контрактом ознакомлен(а)<span1></span1></div></label>
 
 <div class="otpr"><label><button>Отправить!</button></label></div>
