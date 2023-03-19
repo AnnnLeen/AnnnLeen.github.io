@@ -13,43 +13,77 @@
       
 <h2>Форма регистрации</h2>
 <form action="" method="POST">
-  
-  Имя: <input name="fio" /><br>
-  
-Год рождения: <select name="year">
-     <?php 
+
+<label>
+        <div class="txt">Имя:</div>
+        <input name="fio"
+          type="text"
+          placeholder="Введите ваше имя">
+</label>
+
+<label>
+        <div class="txt">Email:</div>
+        <input name="email"
+          type="email"
+          placeholder="Введите вашу почту">
+</label>
+
+<label>
+        <div class="txt">Год рождения:</div>
+        <select name="year">
+  <?php 
     for ($i = 1922; $i <= 2022; $i++) {
       printf('<option value="%d">%d год</option>', $i, $i);
     } ?>
-</select><br>
-    
-  E-mail: <input name="email" /><br>
-  
-Пол: <select name="gender">
-    <?php 
-    for ($i = 0; $i <= 1; $i++) {
-      printf('<option value="%d">%d</option>', $i, $i);
-    } ?>
- </select><br>
-    
-Конечности: <select name="limbs"> 
-  <?php 
-    for ($i = 0; $i <= 4; $i++) {
-      printf('<option value="%d">%d</option>', $i, $i);
-    }
-    ?>
-</select><br>
+        </select>
+</label>
 
-Биография: <input name="biography" /><br>
+<label>
+      <div class="txt">Пол:</div>
+      <label><div class="raddio"><input type="radio" checked="checked"
+        name="radio-group-1" value="Мужской">
+        Мужской<span></span></div></label>
+      <label><div class="raddio"><input type="radio"
+        name="radio-group-1" value="Женский">
+        Женский<span></span></div></label>
+</label>
+
+<label>
+      <div class="txt">Количество конечностей:</div>
+      <label><div class="raddio"><input type="radio" checked="checked"
+        name="radio-group-2" value="2">
+        2
+        <span></span></div></label>
+      <label><div class="raddio"><input type="radio"
+        name="radio-group-2" value="3">
+        3<span></span></div></label>
+      <label><div class="raddio"><input type="radio"
+        name="radio-group-2" value="4">
+        4<span></span></div></label>
+</label>
+
+<label>
+        <div class="txt">Сверхспособности:</div>
+        <select name="field-name-4[]"
+          multiple="multiple">
+          <option value="poss_1">Бессмертие</option>
+          <option value="poss_2">Прохождение сквозь стены</option>
+          <option value="poss_3">Понимание теории диффур</option>
+          <option value="poss_4">Левитация</option>
+          <option value="poss_5">Телекинез</option>
+          <option value="poss_6">Телепатия</option>
+        </select>
+</label>
+        
+<label><div class="txt">Биография:</div>
+        <textarea name="biography" placeholder="Напишите свою биографию"></textarea>
+ </label>
+
+<label><div class="check"><input type="checkbox" name="check-1">
+        С контрактом ознакомлен(а)<span1></span1></div></label>
+
+<div class="otpr"><label><button>Отправить!</button></label></div>
     
-Согласие на обработку данных: <select name="checkbox">
-  <?php 
-    for ($i = 0; $i <= 1; $i++) {
-      printf('<option value="%d">%d</option>', $i, $i);
-    } ?>
-</select><br>
-  
-  <input type="submit" value="ok" />
 </form>
 
 </div>
