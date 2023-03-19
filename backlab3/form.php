@@ -40,47 +40,29 @@
 
 <label>
       <div class="txt">Пол:</div>
-      <label><div class="raddio"><input type="radio"
-        name="gender" value="Male">
-        Мужской<span></span></div></label>
-      <label><div class="raddio"><input type="radio"
-        name="gender" value="Female">
-        Женский<span></span></div></label>
+      <select name="gender">
+    <?php 
+    for ($i = 0; $i <= 1; $i++) {
+      printf('<option value="%d">%d</option>', $i, $i);
+    } ?>
+ </select>
 </label>
 
 <label>
       <div class="txt">Количество конечностей:</div>
-      <label><div class="raddio"><input type="radio"
-        name="limbs" value="2">
-        2
-        <span></span></div></label>
-      <label><div class="raddio"><input type="radio"
-        name="limbs" value="3">
-        3<span></span></div></label>
-      <label><div class="raddio"><input type="radio"
-        name="limbs" value="4">
-        4<span></span></div></label>
-</label>
-
-<label>
-        <div class="txt">Сверхспособности:</div>
-        <select name="possibilities"
-          multiple="multiple">
-          <option value="poss_1">Бессмертие</option>
-          <option value="poss_2">Прохождение сквозь стены</option>
-          <option value="poss_3">Понимание теории диффур</option>
-          <option value="poss_4">Левитация</option>
-          <option value="poss_5">Телекинез</option>
-          <option value="poss_6">Телепатия</option>
-        </select>
+      <select name="limbs">
+  <?php 
+    for ($i = 0; $i <= 4; $i++) {
+      printf('<option value="%d">%d</option>', $i, $i);
+    }
+    ?>
+</select>
 </label>
         
 <label><div class="txt">Биография:</div>
         <textarea name="biography" placeholder="Напишите свою биографию"></textarea>
  </label>
 
-<label><div class="check"><input type="checkbox" name="checkbox">
-        С контрактом ознакомлен(а)<span1></span1></div></label>
 
 <div class="otpr"><label><button>Отправить!</button></label></div>
     
