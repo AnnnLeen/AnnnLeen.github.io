@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
   </head>
 
-  <body>
+  <body> 
     
     <div class="form-class">
       
