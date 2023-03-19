@@ -18,7 +18,7 @@
         <div class="txt">Имя:</div>
         <input name="fio"
           type="text"
-          placeholder="Введите ваше имя">
+          placeholder="Введите ваше имя" />
 </label>
 
 <label>
