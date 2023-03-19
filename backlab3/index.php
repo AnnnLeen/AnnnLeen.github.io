@@ -58,10 +58,10 @@ if (empty($_POST['biography'])) {
   $errors = TRUE;
 }
 
-if (empty($_POST['checkbox'])) {
+/*if (empty($_POST['checkbox'])) {
   print('Заполните чекбокс.<br/>');
   $errors = TRUE;
-}
+}*/
 
 
 // *************
