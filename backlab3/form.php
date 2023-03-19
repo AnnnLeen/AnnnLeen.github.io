@@ -42,11 +42,11 @@
       <div class="txt">Пол:</div>
   
       <label><div class="raddio">
-        <input type="radio" name="gender" id="gender1" value="male">
+        <input type="radio" name="gender" id="gender1" value="0">
         Мужской<span></span></div></label>
   
       <label><div class="raddio">
-        <input type="radio" name="gender" id="gender2" value="female">
+        <input type="radio" name="gender" id="gender2" value="1">
         Женский<span></span></div></label>
                                                               
 </label>
