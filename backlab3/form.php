@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Backlab3</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+
+  <body>
+    
+    <div class="form-class">
+      
+<h2>Форма регистрации</h2>
 <form action="" method="POST">
   
   Имя: <input name="fio" /><br>
@@ -18,7 +32,7 @@
     } ?>
  </select><br>
     
-Конечности: <select name="limbs">
+Конечности: <select name="limbs"> 
   <?php 
     for ($i = 0; $i <= 4; $i++) {
       printf('<option value="%d">%d</option>', $i, $i);
@@ -37,3 +51,9 @@
   
   <input type="submit" value="ok" />
 </form>
+
+</div>
+
+</body>
+
+</html> 
