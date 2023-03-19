@@ -40,7 +40,7 @@
 
 <label>
       <div class="txt">Пол:</div>
-      <label><div class="raddio"><input type="radio" checked="checked"
+      <label><div class="raddio"><input type="radio"
         name="gender" value="Male">
         Мужской<span></span></div></label>
       <label><div class="raddio"><input type="radio"
