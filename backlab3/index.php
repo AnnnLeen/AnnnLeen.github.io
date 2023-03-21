@@ -39,7 +39,7 @@ if (empty($_POST['year']) || !is_numeric($_POST['year']) || !preg_match('/^\d+$/
   $errors = TRUE;
 }
 
-/*$ability_data = ['immort', 'wall', 'diff', 'levitation', 'telek', 'telepathy'];
+/*$ability_data = ['1', '2', '3', '4', '5', '6'];
 if (empty($_POST['abilities'])) {
     print('Выберите сверхспособность.<br>');
     $errors = TRUE;
