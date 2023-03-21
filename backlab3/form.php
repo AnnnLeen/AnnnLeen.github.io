@@ -32,7 +32,7 @@
         <div class="txt">Год рождения:</div>
         <select name="year">
   <?php 
-    for ($i = 1922; $i <= 2022; $i++) {
+    for ($i = 1922; $i <= 2022; $i++) { 
       printf('<option value="%d">%d год</option>', $i, $i);
     } ?>
         </select>
