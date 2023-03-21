@@ -39,7 +39,7 @@ if (empty($_POST['year']) || !is_numeric($_POST['year']) || !preg_match('/^\d+$/
   $errors = TRUE;
 }
 
-/*$ability_data = ['1', '2', '3', '4', '5', '6'];
+$ability_data = ['1', '2', '3', '4', '5', '6'];
 if (empty($_POST['abilities'])) {
     print('Выберите сверхспособность.<br>');
     $errors = TRUE;
@@ -56,7 +56,7 @@ else {
 $ability_insert = [];
 foreach ($ability_data as $ability) {
     $ability_insert[$ability] = in_array($ability, $abilities) ? 1 : 0;
-}*/
+}
 
 if (empty($_POST['biography'])) {
   print('Заполните биографию.<br/>');
