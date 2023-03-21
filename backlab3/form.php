@@ -89,12 +89,12 @@
 <label>
         <div class="txt">Сверхспособности:</div>
         <select class="form-select" name="abilities[]" multiple="multiple">
-          <option value="immort">Бессмертие</option>
-          <option value="wall">Прохождение сквозь стены</option>
-          <option value="diff">Понимание теории диффур</option>
-          <option value="levitation">Левитация</option>
-          <option value="telek">Телекинез</option>
-          <option value="telepathy">Телепатия</option>
+          <option value="1">Бессмертие</option>
+          <option value="2">Прохождение сквозь стены</option>
+          <option value="3">Понимание теории диффур</option>
+          <option value="4">Левитация</option>
+          <option value="5">Телекинез</option>
+          <option value="6">Телепатия</option>
         </select>
 </label>
         
