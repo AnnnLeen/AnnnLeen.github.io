@@ -1,0 +1,159 @@
+body {
+  background-color: #386666;
+
+}
+
+.txt {
+  font-weight: 700;
+}
+
+.form-class {
+  width:270px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-left:50px;
+  padding-top: 20px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  background-color: white;
+  border-radius: 65px;
+}
+
+h2 {
+  text-align: center;
+  }
+
+label {
+  display: block;
+  margin-bottom: 4px;
+  position: relative;
+  padding-left: 0px;
+  cursor: pointer;
+}
+
+.raddio, .check {
+  padding-left: 25px;
+}
+
+input, select, textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 3px solid #bebebe;
+  box-shadow: 0 0 15px 4px rgba(0,0,0,0.15);
+  border-radius: 12px;
+  font-family:inherit;
+  font-size: inherit;
+  background-color: #e5f8f2;
+}
+
+textarea {
+  width:100%;
+  resize: vertical;
+  height:150px;
+}
+
+select {
+  width:270px;
+}
+
+label input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width:0; 
+  height:0;
+}
+
+label input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  width:0; 
+  height:0;
+}
+
+label span1 {
+  position: absolute;
+  top:0;
+  left:0;
+  width:20px; 
+  height:20px;
+  background-color: #ddd;
+  border-radius: 2%;
+  transition: .3s background-color; 
+}
+
+label span1:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background-color:#fff;
+  width:6px;
+  height:6px;
+  border-radius:2%;
+}
+
+label:hover span1 {
+  background-color: #ccc;
+}
+
+label input:checked ~ span1 {
+  background-color: #2f9d9d;
+}
+label input:checked ~ span1:after {
+  display:block;
+}
+
+
+label span {
+  position: absolute;
+  top:0;
+  left:0;
+  width:20px; 
+  height:20px;
+  background-color: #ddd;
+  border-radius: 50%;
+  transition: .3s background-color; 
+}
+
+label span:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background-color:#fff;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+}
+label:hover span {
+  background-color: #ccc;
+}
+
+label input:checked ~ span {
+  background-color: #2f9d9d;
+}
+label input:checked ~ span:after {
+  display:block;
+}
+
+button {
+  appearance:none;
+  -webkit-appearance:none;
+  padding: 10px;
+  border:none;
+  background-color:#1a8989;
+  color:#fff;
+  font-weight:600;
+  border-radius:5px;
+  width:100%;
+}
+
+.otpr {
+  padding-top: 20px;
+}
