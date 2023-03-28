@@ -1,6 +1,9 @@
+.error {
+  border: 2px solid red;
+}
+
 body {
   background-color: #386666;
-
 }
 
 .txt {
