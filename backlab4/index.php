@@ -13,6 +13,7 @@ $errors['fio'] = !empty($_COOKIE['fio_error']);
 $errors['email'] = !empty($_COOKIE['email_error']);
 $errors['year'] = !empty($_COOKIE['year_error']);
 $errors['gender'] = !empty($_COOKIE['gender_error']);
+$errors['abilities'] = !empty($_COOKIE['abilities_error']);
 $errors['limbs'] = !empty($_COOKIE['limbs_error']);
 $errors['biography'] = !empty($_COOKIE['biography_error']);
 $errors['accept'] = !empty($_COOKIE['accept_error']);
@@ -42,6 +43,11 @@ if ($errors['limbs']) {
     $messages[] = '<div class="error">Заполните количество конечностей.</div>';
   }
   
+if ($errors['abilities']) {
+    setcookie('abilities_error', '', 100000);
+    $messages[] = '<div class="error">Заполните сверхспособности.</div>';
+  }
+  
 if ($errors['biography']) {
     setcookie('biography_error', '', 100000);
     $messages[] = '<div class="error">Заполните биографию.</div>';
@@ -59,6 +65,7 @@ if ($errors['accept']) {
  $values['year'] = empty($_COOKIE['year_value']) ? '' : $_COOKIE['year_value'];
  $values['gender'] = empty($_COOKIE['gender_value']) ? '' : $_COOKIE['gender_value'];
  $values['limbs'] = empty($_COOKIE['limbs_value']) ? '' : $_COOKIE['limbs_value'];
+ $values['abilities'] = empty($_COOKIE['abilities_value']) ? '' : $_COOKIE['abilities_value'];
  $values['biography'] = empty($_COOKIE['biography_value']) ? '' : $_COOKIE['biography_value'];
  $values['accept'] = empty($_COOKIE['accept_value']) ? '' : $_COOKIE['accept_value'];
  include('form.php');
@@ -98,7 +105,7 @@ if ($errors['accept']) {
     setcookie('gender_value', $_POST['gender'], time() + 30 * 24 * 60 * 60);
   }
   
-  if (empty($_POST['limbs'])) {
+if (empty($_POST['limbs'])) {
     setcookie('limbs_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   }
@@ -106,6 +113,24 @@ if ($errors['accept']) {
     setcookie('limbs_value', $_POST['limbs'], time() + 30 * 24 * 60 * 60);
   }
   
+ $ability_data = ['1', '2', '3', '4', '5', '6'];
+if (empty($_POST['abilities'])) {
+    setcookie('abilities_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+}
+else {
+    $abilities = $_POST['abilities'];
+    foreach ($abilities as $ability) {
+        if (!in_array($ability, $ability_data)) {
+            setcookie('abilities_value', $_POST['abilities'], time() + 30 * 24 * 60 * 60);
+        }
+    }
+}
+$ability_insert = [];
+foreach ($ability_data as $ability) {
+    $ability_insert[$ability] = in_array($ability, $abilities) ? 1 : 0;
+}
+   
   if (empty($_POST['biography'])) {
     setcookie('biography_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
