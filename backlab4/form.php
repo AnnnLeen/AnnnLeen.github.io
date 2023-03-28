@@ -52,14 +52,12 @@ if (!empty($messages)) {
 <label>
       <div class="txt">Пол:</div>
   
-      <label><div class="raddio">
+      <label><div class="raddio"  <?php if ($errors['gender']) {print 'class="error"';} ?> value="<?php print $values['gender']; ?>" />
         <input type="radio" name="gender" id="gender1" value="0"
-               <?php if ($errors['gender']) {print 'class="error"';} ?> value="<?php print $values['gender']; ?>" />
         Мужской<span></span></div></label>
   
       <label><div class="raddio">
-        <input type="radio" name="gender" id="gender2" value="1"
-               <?php if ($errors['gender']) {print 'class="error"';} ?> value="<?php print $values['gender']; ?>" />
+        <input type="radio" name="gender" id="gender2" value="1"/>
         Женский<span></span></div></label>
                                                               
 </label>
