@@ -1,3 +1,6 @@
+.error {
+  border: 2px solid #dc143c;
+}
 
 body {
   background-color: #386666;
