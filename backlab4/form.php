@@ -4,7 +4,12 @@
   <head>
     <meta charset="UTF-8">
     <title>Backlab4</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="styl.css" type="text/css">
+    <style>
+      .error {
+      border: 2px solid #dc143c;
+      }
+</style>
   </head>
 
   <body>
