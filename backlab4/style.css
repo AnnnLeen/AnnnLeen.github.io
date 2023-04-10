@@ -1,7 +1,6 @@
 .error {
-  border: 5px solid black;
+  border: 5px solid #dc143c;
   color: white;
-  padding: 5px;
 }
 
 body {
