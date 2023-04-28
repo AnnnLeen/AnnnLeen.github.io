@@ -65,9 +65,12 @@ if ($errors['accept']) {
  $values['year'] = empty($_COOKIE['year_value']) ? '' : $_COOKIE['year_value'];
  $values['gender'] = empty($_COOKIE['gender_value']) ? '' : $_COOKIE['gender_value'];
  $values['limbs'] = empty($_COOKIE['limbs_value']) ? '' : $_COOKIE['limbs_value'];
- $values['abilities'] = empty($_COOKIE['abilities_value']) ? '' : $_COOKIE['abilities_value'];
  $values['biography'] = empty($_COOKIE['biography_value']) ? '' : $_COOKIE['biography_value'];
  $values['accept'] = empty($_COOKIE['accept_value']) ? '' : $_COOKIE['accept_value'];
+  
+ for ($i=0; $i<6; $i++) {
+ $values['ability'.$i] = empty($_COOKIE['ability'.$i]) ? '' : ($_COOKIE['ability'.$i]);
+ }
  include('form.php');
  }
  
@@ -112,26 +115,8 @@ if (empty($_POST['limbs'])) {
   else {
     setcookie('limbs_value', $_POST['limbs'], time() + 30 * 24 * 60 * 60);
   }
-  
- $ability_data = ['1', '2', '3', '4', '5', '6'];
-if (empty($_POST['abilities'])) {
-    setcookie('abilities_error', '1', time() + 24 * 60 * 60);
-    $errors = TRUE;
-}
-else {
-    $abilities = $_POST['abilities'];
-    foreach ($abilities as $ability) {
-        if (!in_array($ability, $ability_data)) {
-            setcookie('abilities_value', $_POST['abilities'], time() + 30 * 24 * 60 * 60);
-        }
-    }
-}
-$ability_insert = [];
-foreach ($ability_data as $ability) {
-    $ability_insert[$ability] = in_array($ability, $abilities) ? 1 : 0;
-}
    
-  if (empty($_POST['biography'])) {
+   if (empty($_POST['biography'])) {
     setcookie('biography_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   }
@@ -147,10 +132,42 @@ foreach ($ability_data as $ability) {
     setcookie('accept_value', $_POST['accept'], time() + 30 * 24 * 60 * 60);
   }
   
-  if ($errors) {
+ $ability_data = ['1', '2', '3', '4', '5', '6'];
+if (empty($_POST['abilities'])) {
+    setcookie('abilities_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+}
+else {
+    $abilities = $_POST['abilities'];
+    foreach ($abilities as $ability) {
+        if (!in_array($ability, $ability_data)) {
+            setcookie('abilities_error', '1', time() + 30 * 24 * 60 * 60);
+          $errors = TRUE;
+        }
+    }
+  if(!$errors) {
+    $ability_insert = [];
+    $i=0;
+    foreach ($ability_data as $ability) {
+      $ability_insert[$ability] = in_array($ability, $abilities) ? 1 : 0;
+    setcookie('ability'.$i, $ability_insert[&ability], time() + 30 * 24 * 60 * 60);
+      $i++;
+    }
+  }
+}
+   
+   if (!$errors) {
+        setcookie('gender_value', $_POST['gender'], time() + 30 * 24 * 60 * 60);
+        setcookie('biography_value', $_POST['biography'], time() + 30 * 24 * 60 * 60);
+        setcookie('limbs_value', $_POST['limbs'], time() + 30 * 24 * 60 * 60);
+        setcookie('accept_value', $_POST['accept'], time() + 30 * 24 * 60 * 60);
+    }
+   
+     if ($errors) {
     header('Location: index.php');
     exit();
   }
+
   
   else {
     setcookie('fio_error', '', 100000);
@@ -162,7 +179,7 @@ foreach ($ability_data as $ability) {
     setcookie('accept_error', '', 100000);
   }
 
-  // Сохранение в БД.
+
 $user = 'u54906';
 $pass = '6634443';
 $db = new PDO('mysql:host=localhost;dbname=u54906', $user, $pass, [PDO::ATTR_PERSISTENT => true]);
