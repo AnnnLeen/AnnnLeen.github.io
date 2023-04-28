@@ -150,7 +150,7 @@ else {
     $i=0;
     foreach ($ability_data as $ability) {
       $ability_insert[$ability] = in_array($ability, $abilities) ? 1 : 0;
-    setcookie('ability'.$i, $ability_insert[&ability], time() + 30 * 24 * 60 * 60);
+    setcookie('ability'.$i, $ability_insert[$ability], time() + 30 * 24 * 60 * 60);
       $i++;
     }
   }
