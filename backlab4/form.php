@@ -113,7 +113,7 @@ if (!empty($messages)) {
 </label>
                                                                 
 <label>
-        <div class="txt" <?php if ($errors['abilities'] {print 'class="error"';} ?>>Сверхспособности:</div>
+        <div class="txt" <?php if ($errors['abilities']) {print 'class="error"';} ?>>Сверхспособности:</div>
         <select class="form-select" name="abilities[]" multiple="multiple">
           <option <?php if($values['ability0']==1) print 'selected="selected"';?> value="1">Бессмертие</option>
           <option <?php if($values['ability1']==1) print 'selected="selected"';?> value="2">Прохождение сквозь стены</option>
