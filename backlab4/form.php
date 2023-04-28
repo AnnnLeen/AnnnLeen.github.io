@@ -57,14 +57,14 @@ if (!empty($messages)) {
 <label>
       <div class="txt">Пол:</div>
   
-      <label><div class="raddio">
-        <input type="radio" name="gender" id="gender1" value="0"
-               <?php if ($errors['gender']) {print 'class="error"';} ?> value="<?php print $values['gender']; ?>" />
+      <label <?php if ($errors['gender']) {print 'class="error"';} ?> value="<?php print $values['gender']; ?>" />><div class="raddio">
+        <input type="radio" name="gender" id="gender1" value="0" <?php if($values['gender_value'] == 0) print 'checked';?>
+               
         Мужской<span></span></div></label>
   
       <label><div class="raddio">
         <input type="radio" name="gender" id="gender2" value="1"
-               <?php if ($errors['gender']) {print 'class="error"';} ?> value="<?php print $values['gender']; ?>" />
+               <?php if($values['gender_value'] == 1) print 'checked';?>
         Женский<span></span></div></label>
                                                               
 </label>
@@ -113,14 +113,14 @@ if (!empty($messages)) {
 </label>
                                                                 
 <label>
-        <div class="txt">Сверхспособности:</div>
+        <div class="txt" <?php if ($errors['abilities_error']||$errors['abilities_empty']) {print 'class="error"';} ?>>Сверхспособности:</div>
         <select class="form-select" name="abilities[]" multiple="multiple">
-          <option value="1">Бессмертие</option>
-          <option value="2">Прохождение сквозь стены</option>
-          <option value="3">Понимание теории диффур</option>
-          <option value="4">Левитация</option>
-          <option value="5">Телекинез</option>
-          <option value="6">Телепатия</option>
+          <option <?php if($values['ability0']==1) print 'selected="selected"';?> value="1">Бессмертие</option>
+          <option <?php if($values['ability1']==1) print 'selected="selected"';?> value="2">Прохождение сквозь стены</option>
+          <option <?php if($values['ability2']==1) print 'selected="selected"';?> value="3">Понимание теории диффур</option>
+          <option <?php if($values['ability3']==1) print 'selected="selected"';?> value="4">Левитация</option>
+          <option <?php if($values['ability4']==1) print 'selected="selected"';?> value="5">Телекинез</option>
+          <option <?php if($values['ability5']==1) print 'selected="selected"';?> value="6">Телепатия</option>
         </select>
 </label>
         
