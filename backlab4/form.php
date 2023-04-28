@@ -57,7 +57,7 @@ if (!empty($messages)) {
 <label>
       <div class="txt">Пол:</div>
   
-      <label <?php if ($errors['gender']) {print 'class="error"';} ?> value="<?php print $values['gender']; ?>" />><div class="raddio">
+      <label <?php if ($errors['gender']) {print 'class="error"';} ?> value="<?php print $values['gender']; ?>" /><div class="raddio">
         <input type="radio" name="gender" id="gender1" value="0" <?php if($values['gender'] == 0) print 'checked';?>
                
         Мужской<span></span></div></label>
