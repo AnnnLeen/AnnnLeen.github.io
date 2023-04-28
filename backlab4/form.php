@@ -62,13 +62,13 @@ if (!empty($messages)) {
       <label><div class="raddio">
         <input type="radio" name="gender" id="gender1" value="0" <?php if($values['gender'] == 0) print 'checked';?>
                
-        >Мужской
+               >Мужской<span></span>
         </div></label>
   
       <label><div class="raddio">
         <input type="radio" name="gender" id="gender2" value="1"
                <?php if($values['gender'] == 1) print 'checked';?>
-        >Женский
+               >Женский<span></span>
         </div></label>
                                                               
 </label>
