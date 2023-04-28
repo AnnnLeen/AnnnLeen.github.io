@@ -58,13 +58,13 @@ if (!empty($messages)) {
       <div class="txt">Пол:</div>
   
       <label <?php if ($errors['gender']) {print 'class="error"';} ?> value="<?php print $values['gender']; ?>" />><div class="raddio">
-        <input type="radio" name="gender" id="gender1" value="0" <?php if($values['gender_value'] == 0) print 'checked';?>
+        <input type="radio" name="gender" id="gender1" value="0" <?php if($values['gender'] == 0) print 'checked';?>
                
         Мужской<span></span></div></label>
   
       <label><div class="raddio">
         <input type="radio" name="gender" id="gender2" value="1"
-               <?php if($values['gender_value'] == 1) print 'checked';?>
+               <?php if($values['gender'] == 1) print 'checked';?>
         Женский<span></span></div></label>
                                                               
 </label>
@@ -113,7 +113,7 @@ if (!empty($messages)) {
 </label>
                                                                 
 <label>
-        <div class="txt" <?php if ($errors['abilities_error']||$errors['abilities_empty']) {print 'class="error"';} ?>>Сверхспособности:</div>
+        <div class="txt" <?php if ($errors['abilities'] {print 'class="error"';} ?>>Сверхспособности:</div>
         <select class="form-select" name="abilities[]" multiple="multiple">
           <option <?php if($values['ability0']==1) print 'selected="selected"';?> value="1">Бессмертие</option>
           <option <?php if($values['ability1']==1) print 'selected="selected"';?> value="2">Прохождение сквозь стены</option>
