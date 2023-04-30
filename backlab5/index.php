@@ -1,117 +1,204 @@
+<?php
 header('Content-Type: text/html; charset=UTF-8');
 
-// В суперглобальном массиве $_SERVER PHP сохраняет некторые заголовки запроса HTTP
-// и другие сведения о клиненте и сервере, например метод текущего запроса $_SERVER['REQUEST_METHOD'].
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-  // Массив для временного хранения сообщений пользователю.
   $messages = array();
-
-  // В суперглобальном массиве $_COOKIE PHP хранит все имена и значения куки текущего запроса.
-  // Выдаем сообщение об успешном сохранении.
   if (!empty($_COOKIE['save'])) {
-    // Удаляем куку, указывая время устаревания в прошлом.
     setcookie('save', '', 100000);
-    setcookie('login', '', 100000);
-    setcookie('pass', '', 100000);
-    // Выводим сообщение пользователю.
-    $messages[] = 'Спасибо, результаты сохранены.';
-    // Если в куках есть пароль, то выводим сообщение.
-    if (!empty($_COOKIE['pass'])) {
-      $messages[] = sprintf('Вы можете <a href="login.php">войти</a> с логином <strong>%s</strong>
-        и паролем <strong>%s</strong> для изменения данных.',
-        strip_tags($_COOKIE['login']),
-        strip_tags($_COOKIE['pass']));
-    }
+    $messages[] = 'Спасибо! Результаты сохранены.';
   }
 
-  // Складываем признак ошибок в массив.
-  $errors = array();
-  $errors['fio'] = !empty($_COOKIE['fio_error']);
+$errors = array();
+$errors['fio'] = !empty($_COOKIE['fio_error']);
+$errors['email'] = !empty($_COOKIE['email_error']);
+$errors['year'] = !empty($_COOKIE['year_error']);
+$errors['gender'] = !empty($_COOKIE['gender_error']);
+$errors['abilities'] = !empty($_COOKIE['abilities_error']);
+$errors['limbs'] = !empty($_COOKIE['limbs_error']);
+$errors['biography'] = !empty($_COOKIE['biography_error']);
+$errors['accept'] = !empty($_COOKIE['accept_error']);
 
-  // TODO: аналогично все поля.
-
-  // Выдаем сообщения об ошибках.
-  if (!empty($errors['fio'])) {
-    // Удаляем куку, указывая время устаревания в прошлом.
+if ($errors['fio']) {
     setcookie('fio_error', '', 100000);
-    // Выводим сообщение.
     $messages[] = '<div class="error">Заполните имя.</div>';
   }
-  // TODO: тут выдать сообщения об ошибках в других полях.
-
-  // Складываем предыдущие значения полей в массив, если есть.
-  // При этом санитизуем все данные для безопасного отображения в браузере.
-  $values = array();
-  $values['fio'] = empty($_COOKIE['fio_value']) ? '' : strip_tags($_COOKIE['fio_value']);
-  // TODO: аналогично все поля.
-
-  // Если нет предыдущих ошибок ввода, есть кука сессии, начали сессию и
-  // ранее в сессию записан факт успешного логина.
-  if (empty($errors) && !empty($_COOKIE[session_name()]) &&
-      session_start() && !empty($_SESSION['login'])) {
-    // TODO: загрузить данные пользователя из БД
-    // и заполнить переменную $values,
-    // предварительно санитизовав.
-    printf('Вход с логином %s, uid %d', $_SESSION['login'], $_SESSION['uid']);
+  
+if ($errors['email']) {
+    setcookie('email_error', '', 100000);
+    $messages[] = '<div class="error">Заполните почту.</div>';
   }
-
-  // Включаем содержимое файла form.php.
-  // В нем будут доступны переменные $messages, $errors и $values для вывода 
-  // сообщений, полей с ранее заполненными данными и признаками ошибок.
-  include('form.php');
-}
-// Иначе, если запрос был методом POST, т.е. нужно проверить данные и сохранить их в XML-файл.
-else {
-  // Проверяем ошибки.
+  
+if ($errors['year']) {
+    setcookie('year_error', '', 100000);
+    $messages[] = '<div class="error">Заполните год.</div>';
+  }
+  
+if ($errors['gender']) {
+    setcookie('gender_error', '', 100000);
+    $messages[] = '<div class="error">Заполните пол.</div>';
+  }
+  
+if ($errors['limbs']) {
+    setcookie('limbs_error', '', 100000);
+    $messages[] = '<div class="error">Заполните количество конечностей.</div>';
+  }
+  
+if ($errors['abilities']) {
+    setcookie('abilities_error', '', 100000);
+    $messages[] = '<div class="error">Заполните сверхспособности.</div>';
+  }
+  
+if ($errors['biography']) {
+    setcookie('biography_error', '', 100000);
+    $messages[] = '<div class="error">Заполните биографию.</div>';
+  }
+  
+if ($errors['accept']) {
+    setcookie('accept_error', '', 100000);
+    $messages[] = '<div class="error">Заполните пользовательское соглашение.</div>';
+  }
+  
+  
+ $values = array();
+ $values['fio'] = empty($_COOKIE['fio_value']) ? '' : $_COOKIE['fio_value'];
+ $values['email'] = empty($_COOKIE['email_value']) ? '' : $_COOKIE['email_value'];
+ $values['year'] = empty($_COOKIE['year_value']) ? '' : $_COOKIE['year_value'];
+ $values['gender'] = empty($_COOKIE['gender_value']) ? '' : $_COOKIE['gender_value'];
+ $values['limbs'] = empty($_COOKIE['limbs_value']) ? '' : $_COOKIE['limbs_value'];
+ $values['biography'] = empty($_COOKIE['biography_value']) ? '' : $_COOKIE['biography_value'];
+ $values['accept'] = empty($_COOKIE['accept_value']) ? '' : $_COOKIE['accept_value'];
+  
+ for ($i=0; $i<6; $i++) {
+ $values['ability'.$i] = empty($_COOKIE['ability'.$i]) ? '' : ($_COOKIE['ability'.$i]);
+ }
+ include('form.php');
+ }
+ 
+ else {
   $errors = FALSE;
   if (empty($_POST['fio'])) {
-    // Выдаем куку на день с флажком об ошибке в поле fio.
     setcookie('fio_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   }
   else {
-    // Сохраняем ранее введенное в форму значение на месяц.
     setcookie('fio_value', $_POST['fio'], time() + 30 * 24 * 60 * 60);
   }
-
-// *************
-// TODO: тут необходимо проверить правильность заполнения всех остальных полей.
-// Сохранить в Cookie признаки ошибок и значения полей.
-// *************
-
-  if ($errors) {
-    // При наличии ошибок перезагружаем страницу и завершаем работу скрипта.
+  
+  if (empty($_POST['email'])) {
+    setcookie('email_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
+    setcookie('email_value', $_POST['email'], time() + 30 * 24 * 60 * 60);
+  }
+  
+  if (empty($_POST['year'])) {
+    setcookie('year_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
+    setcookie('year_value', $_POST['year'], time() + 30 * 24 * 60 * 60);
+  }
+  
+  if (empty($_POST['gender'])) {
+    setcookie('gender_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
+    setcookie('gender_value', $_POST['gender'], time() + 30 * 24 * 60 * 60);
+  }
+  
+if (empty($_POST['limbs'])) {
+    setcookie('limbs_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
+    setcookie('limbs_value', $_POST['limbs'], time() + 30 * 24 * 60 * 60);
+  }
+   
+   if (empty($_POST['biography'])) {
+    setcookie('biography_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
+    setcookie('biography_value', $_POST['biography'], time() + 30 * 24 * 60 * 60);
+  }
+  
+  if (empty($_POST['accept'])) {
+    setcookie('accept_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
+    setcookie('accept_value', $_POST['accept'], time() + 30 * 24 * 60 * 60);
+  }
+  
+ $ability_data = ['1', '2', '3', '4', '5', '6'];
+if (empty($_POST['abilities'])) {
+    setcookie('abilities_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+}
+else {
+    $abilities = $_POST['abilities'];
+    foreach ($abilities as $ability) {
+        if (!in_array($ability, $ability_data)) {
+            setcookie('abilities_error', '1', time() + 30 * 24 * 60 * 60);
+          $errors = TRUE;
+        }
+    }
+  if(!$errors) {
+    $ability_insert = [];
+    $i=0;
+    foreach ($ability_data as $ability) {
+      $ability_insert[$ability] = in_array($ability, $abilities) ? 1 : 0;
+    setcookie('ability'.$i, $ability_insert[$ability], time() + 30 * 24 * 60 * 60);
+      $i++;
+    }
+  }
+}
+   
+   if (!$errors) {
+        setcookie('gender_value', $_POST['gender'], time() + 30 * 24 * 60 * 60);
+        setcookie('biography_value', $_POST['biography'], time() + 30 * 24 * 60 * 60);
+        setcookie('limbs_value', $_POST['limbs'], time() + 30 * 24 * 60 * 60);
+        setcookie('accept_value', $_POST['accept'], time() + 30 * 24 * 60 * 60);
+    }
+   
+     if ($errors) {
     header('Location: index.php');
     exit();
   }
+
+  
   else {
-    // Удаляем Cookies с признаками ошибок.
     setcookie('fio_error', '', 100000);
-    // TODO: тут необходимо удалить остальные Cookies.
+    setcookie('email_error', '', 100000);
+    setcookie('year_error', '', 100000);
+    setcookie('gender_error', '', 100000);
+    setcookie('limbs_error', '', 100000);
+    setcookie('biography_error', '', 100000);
+    setcookie('accept_error', '', 100000);
   }
 
-  // Проверяем меняются ли ранее сохраненные данные или отправляются новые.
-  if (!empty($_COOKIE[session_name()]) &&
-      session_start() && !empty($_SESSION['login'])) {
-    // TODO: перезаписать данные в БД новыми данными,
-    // кроме логина и пароля.
-  }
-  else {
-    // Генерируем уникальный логин и пароль.
-    // TODO: сделать механизм генерации, например функциями rand(), uniquid(), md5(), substr().
-    $login = '123';
-    $pass = '123';
-    // Сохраняем в Cookies.
-    setcookie('login', $login);
-    setcookie('pass', $pass);
 
-    // TODO: Сохранение данных формы, логина и хеш md5() пароля в базу данных.
-    // ...
-  }
+$user = 'u54906';
+$pass = '6634443';
+$db = new PDO('mysql:host=localhost;dbname=u54906', $user, $pass, [PDO::ATTR_PERSISTENT => true]);
 
-  // Сохраняем куку с признаком успешного сохранения.
+try {
+  $stmt = $db->prepare("INSERT INTO application SET fio = ?, email = ?, year = ?, gender = ?, limbs = ?, biography = ?, accept = ?");
+  $stmt -> execute([$_POST['fio'], $_POST['email'], $_POST['year'], $_POST['gender'], $_POST['limbs'], $_POST['biography'], $_POST['accept']]);
+  
+  $app_id = $db->lastInsertId();
+  $stmt = $db->prepare("INSERT INTO app_ability SET app_id = ?, abl_id = ?");
+  foreach ($abilities as $ability) {
+    $stmt -> execute([$app_id, $ability]);
+  }
+}
+catch(PDOException $e){
+  print('Error : ' . $e->getMessage());
+  exit();
+}
+
   setcookie('save', '1');
-
-  // Делаем перенаправление.
-  header('Location: ./');
+  header('Location: index.php');
 }
