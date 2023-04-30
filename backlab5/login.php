@@ -10,7 +10,7 @@ session_start();
 if (!empty($_SESSION['login'])) {
     print('
     <form method="POST">
-        <div class="form-class">
+        <div class="d-grid gap-2 col-6 mx-auto">
             <input class="btn btn-light" type="submit" name="sessiondestroy" value="Выход"/>
         </div>
     </form>
@@ -32,15 +32,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <head>
         <meta charset="utf-8">
         <title>Backlab5</title>
-        <link rel="stylesheet" href="style.css" type="text/css">
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+              integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+              crossorigin="anonymous">
 
 </head>
     <body>
-    <div class="form-class">
+    <div class="container">
 <form action="" method="post">
-  <input name="login" />
-  <input name="pass" />
-  <input type="submit" value="Войти" />
+<div class="mb-3">
+                <label for="login" class="form-label">Ваш логин</label>
+                <input type="login" class="form-control" name="login" id="login" aria-describedby="Enter your login">
+            </div>
+            <div class="mb-3">
+                <label for="pwd" class="form-label">Ваш пароль</label>
+                <input type="pwd" class="form-control" name="pwd" id="pwd">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Войти"/>
 </form>
 </div>
 </body>
