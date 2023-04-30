@@ -42,11 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <div class="container">
 <form action="" method="post">
 <div class="mb-3">
-                <label for="login" class="form-label">Ваш логин</label>
-                <input type="login" class="form-control" name="login" id="login" aria-describedby="Enter your login">
+                <label for="login" class="form-label">Введите логин</label>
+                <input type="login" class="form-control" name="login" id="login" aria-describedby="Login">
             </div>
             <div class="mb-3">
-                <label for="pwd" class="form-label">Ваш пароль</label>
+                <label for="pwd" class="form-label">Введите пароль</label>
                 <input type="pwd" class="form-control" name="pwd" id="pwd">
             </div>
             <input type="submit" class="btn btn-primary" value="Войти"/>
@@ -75,7 +75,7 @@ else {
     }
 
     if (empty($data)){
-        print('<div class="alert alert-secondary" role="alert">Пользователь с таким именем или паролем не найден</div>');
+        print('<div class="alert alert-secondary" role="alert">Такого имени не существует.</div>');
     }
     else {
         if (password_verify($_POST['pwd'], $data['pwd'])) {
@@ -84,7 +84,7 @@ else {
             header('Location: ./');
             exit();
         } else {
-            print('<div class="alert alert-secondary" role="alert">Неверный пароль</div>');
+            print('<div class="alert alert-secondary" role="alert">Неверный пароль.</div>');
         }
     }
 
