@@ -1,5 +1,4 @@
 <?php
-
 $user = 'u54906';
 $pass = '6634443';
 
@@ -276,4 +275,4 @@ catch(PDOException $e){
 
   setcookie('save', '1');
   header('Location: index.php');
-}
+}}
