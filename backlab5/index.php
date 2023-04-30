@@ -267,8 +267,8 @@ try {
             
         $third_stmt = $db->prepare("INSERT INTO login SET user_id = ?, login = ?, pwd = ?);
         $third_stmt->execute(array($id, $login, password_hash($pwd, PASSWORD_DEFAULT)));
-        }
 }
+
 catch(PDOException $e){
   print('Error : ' . $e->getMessage());
   exit();
