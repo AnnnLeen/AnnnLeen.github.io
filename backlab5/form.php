@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Backlab4</title>
+    <title>Backlab5</title>
     <link rel="stylesheet" href="style.css" type="text/css">
     <style>
       .error {
@@ -22,8 +22,6 @@ if (!empty($messages)) {
   }
   print('</div>');
 }?>
-    
-    
     
     
     <div class="form-class">
