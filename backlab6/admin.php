@@ -33,7 +33,7 @@
     session_start();
     $_SESSION['is_admin']=true;
 
-    echo '<h1 class="text-center m-5">Вы успешно авторизовались и видите защищенные паролем данные.</h1>';
+    echo '<h1>Вы успешно авторизовались и видите защищенные паролем данные.</h1>';
 
     $first_stmt = $db->prepare("SELECT * FROM users");
     try {
@@ -185,7 +185,7 @@
                 exit();
             }
             $_SESSION['login'] = $login;
-            $_SESSION['uid'] = $user_data['id'];
+            $_SESSION['id'] = $user_data['id'];
             header('Location: index.php');
             exit();
         }
