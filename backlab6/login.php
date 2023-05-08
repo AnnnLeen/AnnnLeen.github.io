@@ -76,7 +76,7 @@ else {
     }
     else {
         if (password_verify($_POST['pwd'], $data['pwd'])) {
-            $_SESSION['uid'] = $data['user_id'];
+            $_SESSION['id'] = $data['user_id'];
             $_SESSION['login'] = $_POST['login'];
             header('Location: ./');
             exit();
