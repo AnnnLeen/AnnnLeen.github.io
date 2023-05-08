@@ -10,8 +10,8 @@ session_start();
 if (!empty($_SESSION['login'])) {
     print('
     <form method="POST">
-        <div class="d-grid gap-2 col-6 mx-auto">
-            <input class="btn btn-light" type="submit" name="sessiondestroy" value="Выход"/>
+        <div>
+            <input class="button" type="submit" name="sessiondestroy" value="Выход"/>
         </div>
     </form>
     ');
@@ -40,16 +40,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 </head>
     <body>
     <div class="container">
-<form action="" method="post">
-<div class="mb-3">
-                <label for="login" class="form-label">Введите логин</label>
+<form action="" method="POST">
+<div class="container1">
+                <label for="login">Введите логин</label>
                 <input type="login" class="form-control" name="login" id="login" aria-describedby="Login">
             </div>
-            <div class="mb-3">
+            <label>
                 <label for="pwd" class="form-label">Введите пароль</label>
                 <input type="pwd" class="form-control" name="pwd" id="pwd">
-            </div>
-            <input type="submit" class="btn btn-primary" value="Войти"/>
+            </label>
+            <input type="submit" class="button" value="Войти"/>
 </form>
 </div>
 </body>
@@ -84,7 +84,7 @@ else {
             header('Location: ./');
             exit();
         } else {
-            print('<div class="alert alert-secondary" role="alert">Неверный пароль.</div>');
+            print('<div role="alert">Неверный пароль.</div>');
         }
     }
 
