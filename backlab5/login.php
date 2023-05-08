@@ -32,22 +32,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <head>
         <meta charset="utf-8">
         <title>Backlab5</title>
-       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-              rel="stylesheet"
-              integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-              crossorigin="anonymous">
+       <link rel="stylesheet" href="style.css" type="text/css">
 
 </head>
     <body>
-    <div class="container">
+    <div class="container1">
 <form action="" method="POST">
 <div class="container1">
                 <label for="login">Введите логин</label>
-                <input type="login" class="form-control" name="login" id="login" aria-describedby="Login">
+                <input type="login" name="login" id="login">
             </div>
             <label>
-                <label for="pwd" class="form-label">Введите пароль</label>
-                <input type="pwd" class="form-control" name="pwd" id="pwd">
+                <label for="pwd">Введите пароль</label>
+                <input type="pwd" name="pwd" id="pwd">
             </label>
             <input type="submit" class="button" value="Войти"/>
 </form>
@@ -63,7 +60,7 @@ else {
 
    $user = 'u54906';
    $pass = '6634443';
-   $db = new PDO('mysql:host=localhost;dbname=u54906', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
+   $db = new PDO('mysql:host=localhost; dbname=u54906', $user, $pass, array(PDO::ATTR_PERSISTENT => true));
    try {
         $stmt = $db->prepare("SELECT * FROM login WHERE login=:login");
         $stmt->execute(array("login"=>$_POST['login']));
@@ -75,11 +72,11 @@ else {
     }
 
     if (empty($data)){
-        print('<div class="alert alert-secondary" role="alert">Такого имени не существует.</div>');
+        print('<div role="alert">Такого имени не существует.</div>');
     }
     else {
         if (password_verify($_POST['pwd'], $data['pwd'])) {
-            $_SESSION['uid'] = $data['user_id'];
+            $_SESSION['id'] = $data['user_id'];
             $_SESSION['login'] = $_POST['login'];
             header('Location: ./');
             exit();
