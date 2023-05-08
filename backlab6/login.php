@@ -31,23 +31,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Backlab5</title>
-       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-              rel="stylesheet"
-              integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-              crossorigin="anonymous">
+        <title>Backlab6</title>
+       <link rel="stylesheet" href="style.css" type="text/css">
 
 </head>
     <body>
-    <div class="container">
+    <div class="container1">
 <form action="" method="POST">
 <div class="container1">
                 <label for="login">Введите логин</label>
-                <input type="login" class="form-control" name="login" id="login" aria-describedby="Login">
+                <input type="login" name="login" id="login">
             </div>
             <label>
-                <label for="pwd" class="form-label">Введите пароль</label>
-                <input type="pwd" class="form-control" name="pwd" id="pwd">
+                <label for="pwd">Введите пароль</label>
+                <input type="pwd" name="pwd" id="pwd">
             </label>
             <input type="submit" class="button" value="Войти"/>
 </form>
