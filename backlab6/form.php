@@ -32,7 +32,7 @@ if (!empty($messages)) {
 <label>
         <div class="txt">Имя:</div>
         <input name="fio" type="text" placeholder="Введите ваше имя"
-               <?php if ($errors['fio_error']) {print 'class="error"';} ?> value="<?php print $values['fio']; ?>" />
+               <?php if ($errors['fio_error']) {print 'class="error"';} ?> value="<?php print $values['fio_value']; ?>" />
 </label>
 
 <label>
