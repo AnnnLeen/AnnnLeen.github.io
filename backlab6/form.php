@@ -38,13 +38,13 @@ if (!empty($messages)) {
 <label>
         <div class="txt">Email:</div>
         <input name="email" type="email" placeholder="Введите вашу почту"
-               <?php if ($errors['email_error']) {print 'class="error"';} ?> value="<?php print $values['email']; ?>" />
+               <?php if ($errors['email_error']) {print 'class="error"';} ?> value="<?php print $values['email_value']; ?>" />
 </label>
 
 <label>
         <div class="txt">Год рождения:</div>
         <select name="year"
-                <?php if ($errors['year_error']) {print 'class="error"';} ?> value="<?php print $values['year']; ?>" />
+                <?php if ($errors['year_error']) {print 'class="error"';} ?> value="<?php print $values['year_value']; ?>" />
   <?php 
     for ($i = 1922; $i <= 2022; $i++) { 
       printf('<option value="%d">%d год</option>', $i, $i);
@@ -58,14 +58,14 @@ if (!empty($messages)) {
       <div class="txt" <?php if ($errors['gender_error']) {print 'class="error"';}?>>Пол:</div>
   
       <label><div class="raddio">
-        <input type="radio" name="gender" id="gender1" value="0" <?php if($values['gender'] == 0) print 'checked';?>
+        <input type="radio" name="gender" id="gender1" value="0" <?php if($values['gender_value'] == 0) print 'checked';?>
                
                >Мужской<span></span>
         </div></label>
   
       <label><div class="raddio">
         <input type="radio" name="gender" id="gender2" value="1"
-               <?php if($values['gender'] == 1) print 'checked';?>
+               <?php if($values['gender_value'] == 1) print 'checked';?>
                >Женский<span></span>
         </div></label>
                                                               
@@ -77,42 +77,42 @@ if (!empty($messages)) {
       <div class="txt">Количество конечностей:</div>
       <label><div class="raddio">
            <input type="radio" name="limbs" id="limb1" value="1"
-                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs']; ?>" />
+                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs_value']; ?>" />
         1<span></span></div></label>
   
       <label><div class="raddio">
            <input type="radio" name="limbs" id="limb2" value="2" 
-                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs']; ?>" />
+                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs_value']; ?>" />
         2<span></span></div></label>
   
       <label><div class="raddio">
            <input type="radio" name="limbs" id="limb3" value="3" 
-                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs']; ?>" />
+                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs_value']; ?>" />
         3<span></span></div></label>
   
         <label><div class="raddio">
   <input type="radio" name="limbs" id="limb4" value="4"
-         <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs']; ?>" />
+         <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs_value']; ?>" />
         4<span></span></div></label>
   
   <label><div class="raddio">
            <input type="radio" name="limbs" id="limb5" value="5"
-                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs']; ?>" />
+                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs_value']; ?>" />
         5<span></span></div></label>
   
   <label><div class="raddio">
            <input type="radio" name="limbs" id="limb6" value="6" 
-                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs']; ?>" />
+                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs_value']; ?>" />
         6<span></span></div></label>
   
   <label><div class="raddio">
            <input type="radio" name="limbs" id="limb7" value="7"
-                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs']; ?>" />
+                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs_value']; ?>" />
         7<span></span></div></label>
   
       <label><div class="raddio">
            <input type="radio" name="limbs" id="limb8" value="8"
-                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs']; ?>" />
+                  <?php if ($errors['limbs_error']) {print 'class="error"';} ?> value="<?php print $values['limbs_value']; ?>" />
         8<span></span></div></label>
 </label>
                                                                 
@@ -130,12 +130,12 @@ if (!empty($messages)) {
         
 <label><div class="txt">Биография:</div>
         <textarea name="biography" placeholder="Напишите свою биографию"
-                  <?php if ($errors['biography_error']) {print 'class="error"';} ?> value="<?php print $values['biography']; ?>"></textarea>
+                  <?php if ($errors['biography_error']) {print 'class="error"';} ?> value="<?php print $values['biography_value']; ?>"></textarea>
  </label>
                                                                         
  <label>
     <div class="check"><input type="checkbox" name="accept" value="1"
-                              <?php if ($errors['accept']) {print 'class="error"';} ?> value="<?php print $values['accept']; ?>" />
+                              <?php if ($errors['accept']) {print 'class="error"';} ?> value="<?php print $values['accept_value']; ?>" />
         С контрактом ознакомлен(а)<span1></span1></div></label>
 
 <div class="otpr"><label><button type="submit" value="send">Отправить!</button></label></div>
