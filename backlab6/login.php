@@ -27,27 +27,38 @@ if( isset( $_POST['sessiondestroy'] ) ) {
 // и другие сведения о клиненте и сервере, например метод текущего запроса $_SERVER['REQUEST_METHOD'].
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 ?>
+
+
 <!DOCTYPE html>
-    <html lang="en">
+    <html lang="ru">
     <head>
         <meta charset="utf-8">
         <title>Backlab6</title>
        <link rel="stylesheet" href="style.css" type="text/css">
 
 </head>
+
     <body>
-    <div class="container1">
+
 <form action="" method="POST">
 <div class="container1">
-                <label for="login">Введите логин</label>
-                <input type="login" name="login" id="login">
-            </div>
-            <label>
-                <label for="pwd">Введите пароль</label>
-                <input type="pwd" name="pwd" id="pwd">
-            </label>
-            <input type="submit" class="button" value="Войти"/>
+
+
+                <label for="login">
+                <div class="txt">Введите логин</div>
+                <input type="login" name="login" id="login"></label>
+
+
+                <label for="pwd">
+                    <div class="txt">Введите пароль</div>
+                <input type="pwd" name="pwd" id="pwd"></label>
+
+            <div class="otpr"><label><button type="submit" value="send">Войти</button></label></div>
+
+        </div>
 </form>
+
+
 </div>
 </body>
 </html>
