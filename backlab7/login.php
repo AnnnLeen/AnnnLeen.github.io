@@ -5,6 +5,10 @@ header('Content-Type: text/html; charset=UTF-8');
 // Начинаем сессию.
 session_start();
 
+function generate_token(){
+    return $_SESSION['csrf_token'] = md5(str_shuffle( 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'));
+}
+
 // В суперглобальном массиве $_SESSION хранятся переменные сессии.
 // Будем сохранять туда логин после успешной авторизации.
 if (!empty($_SESSION['login'])) {
@@ -33,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <html lang="ru">
     <head>
         <meta charset="utf-8">
-        <title>Backlab6</title>
+        <title>Backlab7</title>
        <link rel="stylesheet" href="style.css" type="text/css">
 
 </head>
@@ -42,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
 <form action="" method="POST">
 <div class="container1">
+    <input name="csrf_token" value="<?php print generate_token() ?>">
 
 
                 <label for="login">
@@ -67,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 <?php
 }
 // Иначе, если запрос был методом POST, т.е. нужно сделать авторизацию с записью логина в сессию.
-else {
+else else if (isset($_SESSION['csrf_token']) && $_SESSION['csrf_token'] == $_POST['csrf_token']) {
 
    $user = 'u54906';
    $pass = '6634443';
