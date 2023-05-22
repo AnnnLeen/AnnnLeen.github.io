@@ -15,6 +15,13 @@
   <body>
     
 <?php
+    
+    function generate_token(){
+    return $_SESSION['csrf_token'] = md5(str_shuffle( 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM'));
+}
+
+    
+    
 if (!empty($messages)) {
   print('<div id="messages">');
   foreach ($messages as $message) {
