@@ -304,7 +304,7 @@ if (!isset($_SESSION)) { session_start(); }
              foreach ($abilities as $ability) {
              $second_stmt -> execute([$app_id, $ability]);
              }
-            
+           
               $app_id = $db->lastInsertId();
               $third_stmt = $db->prepare("INSERT INTO login (user_id, login, pwd) VALUES (?, ?, ?)");
               $db->beginTransaction();
