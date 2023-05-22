@@ -158,7 +158,7 @@ if ($errors['accept_error']) {
     include('form.php');
 }
  
- else {
+ else if (session_start() && isset($_SESSION['csrf_token']) && $_SESSION['csrf_token'] == $_POST['csrf_token']) {
   $errors = FALSE;
      
   if (empty($_POST['fio'])) {
@@ -166,10 +166,11 @@ if ($errors['accept_error']) {
     $errors = TRUE;
   } 
 
-  else {
-    setcookie('fio_value', $_POST['fio'], time() + 30 * 24 * 60 * 60);
+  else if (!preg_match("/^[а-яА-Яa-zA-Z ]+$/u", $_POST['fio'])) {
+    setcookie('fio_error', $_POST['fio'], time() + 30 * 24 * 60 * 60);
   }
   
+     
   if (empty($_POST['email'])) {
     setcookie('email_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
