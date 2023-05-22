@@ -1,7 +1,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Backlab6</title>
+    <title>Backlab7</title>
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
