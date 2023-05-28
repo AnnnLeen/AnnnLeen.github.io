@@ -65,16 +65,16 @@ if (!empty($messages)) {
                         
                         type="radio"
                         name="gender"
-                        value="0"
-                        <?php if($values['gender_value'] == 0) print 'checked';?>
+                        value="1"
+                        <?php if($values['gender_value'] == 1) print 'checked';?>
                     > Мужской
 
                     <input
                         
                         type="radio"
-                        name="gender2"
-                        value="1"
-                        <?php if($values['gender_value'] == 1) print 'checked';?>
+                        name="gender"
+                        value="2"
+                        <?php if($values['gender_value'] == 2) print 'checked';?>
                     > Женский
 
      
