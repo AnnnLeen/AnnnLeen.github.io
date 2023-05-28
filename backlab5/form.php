@@ -57,7 +57,7 @@ if (!empty($messages)) {
   
   
   
-   <label>
+   <div>
                     <label <?php if ($errors['gender_empty']) {print 'class="form-label error"';}else{print 'class="form-label"';} ?>>Пол</label>
                     <br>
                     <input
@@ -76,7 +76,7 @@ if (!empty($messages)) {
                         <?php if($values['gender_value'] == 1) print 'checked';?>
                     > Женский
 
-                </label>
+                </div>
   
   
   
