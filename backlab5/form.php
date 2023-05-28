@@ -64,7 +64,7 @@ if (!empty($messages)) {
                     <input
                         
                         type="radio"
-                        name="gender1"
+                        name="gender"
                         value="0"
                         <?php if($values['gender_value'] == 0) print 'checked';?>
                     > Мужской
