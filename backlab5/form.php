@@ -53,24 +53,33 @@ if (!empty($messages)) {
 </label>
 
       
+  
+  
+  
+  
+   <label>
+                    <label <?php if ($errors['gender_empty']) {print 'class="form-label error"';}else{print 'class="form-label"';} ?>>Пол</label>
+                    <br>
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="gender"
+                        value="0"
+                        <?php if($values['gender_value'] == 0) print 'checked';?>
+                    > Мужской
 
-<label>
-      <div class="txt" <?php if ($errors['gender_empty']) {print 'class="error"';}?>>Пол:</div>
+                    <input
+                        class="form-check-input"
+                        type="radio"
+                        name="gender"
+                        value="1"
+                        <?php if($values['gender_value'] == 1) print 'checked';?>
+                    > Женский
+
+                </label>
   
-      <label><div class="raddio">
-        <input type="radio" name="gender" id="gender1" value="0" 
-               <?php if($values['gender_value'] == 0) print 'checked';?>
-               
-               >Мужской<span></span>
-        </div></label>
   
-      <label><div class="raddio">
-        <input type="radio" name="gender" id="gender2" value="1" 
-               <?php if($values['gender_value'] == 1) print 'checked';?>
-               >Женский<span></span>
-        </div></label>
-                                                              
-</label>
+  
 
   
   
