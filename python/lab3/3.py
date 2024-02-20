@@ -25,16 +25,15 @@ class Quad:
         if not isinstance(a, (int, float)):
             raise Exception("Введенные данные не являются числом")
 
-
     def move(self, dx, dy):
         self.x += dx
         self.y += dy
 
     def coord(self):
-        quadCoord = [(self.x, self.y), (self.x + self.a, self.y), (self.x + self.a, self.y - self.a), (self.x, self.y - self.a)]
-        return quadCoord
+        quad_coord = [(self.x, self.y), (self.x + self.a, self.y), (self.x + self.a, self.y - self.a), (self.x, self.y - self.a)]
+        return quad_coord
 
-    def toString(self):
+    def to_string(self):
         print("Квадрат", self.identif, "с координатами x =", self.x, "y =", self.y, "и стороной равной", self.a)
 
 
@@ -69,7 +68,7 @@ class Pentagon:
         pentagonCoord = [(self.x, self.y), (self.x + self.a, self.y), (self.x + self.a * m.cos(2*m.pi/5), self.y - self.a * m.sin(2*m.pi/5)), (self.x + self.a * m.cos(m.pi/5), self.y - self.a * m.sin(m.pi/5)), (self.x - self.a * m.cos(m.pi/5), self.y - self.a * m.sin(m.pi/5))]
         return pentagonCoord
 
-    def toString(self):
+    def to_string(self):
         print("Пятиугольник", self.identif, "с координатами x =", self.x, "y =", self.y, "и стороной равной", self.a)
 
 
@@ -87,8 +86,8 @@ def is_intersect(quad, pentagon):
 
 quad = Quad("001", 2, 4, 6)
 pentagon = Pentagon("002",1, -2, 1)
-quad.toString()
-pentagon.toString()
+quad.to_string()
+pentagon.to_string()
 print("Пересекаются ли фигуры: ", is_intersect(quad, pentagon))
 
 quad.set_x(2)
@@ -97,14 +96,13 @@ quad.set_a(4)
 pentagon.set_x(4)
 pentagon.set_y(4)
 pentagon.set_a(4)
-quad.toString()
-pentagon.toString()
+quad.to_string()
+pentagon.to_string()
 print("Пересекаются ли фигуры: ", is_intersect(quad, pentagon))
 
 quad.move(-2, 0)
 pentagon.move(-2, 1)
-quad.toString()
-pentagon.toString()
+quad.to_string()
+pentagon.to_string()
 
 quad.set_x("абв")
-
