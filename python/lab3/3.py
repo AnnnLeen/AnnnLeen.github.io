@@ -10,10 +10,21 @@ class Quad:
 
     def set_x(self, x):
         self.x = x
+        if not isinstance(x, (int, float)):
+            raise Exception("Введенные данные не являются числом")
+
     def set_y(self, y):
         self.y = y
+        if not isinstance(y, (int, float)):
+            raise Exception("Введенные данные не являются числом")
+
     def set_a(self, a):
         self.a = a
+        if a < 0:
+            raise Exception("Длина стороны меньше нуля")
+        if not isinstance(a, (int, float)):
+            raise Exception("Введенные данные не являются числом")
+
 
     def move(self, dx, dy):
         self.x += dx
@@ -36,10 +47,19 @@ class Pentagon:
 
     def set_x(self, x):
         self.x = x
+        if not isinstance(x, (int, float)):
+            raise Exception("Введенные данные не являются числом")
+
     def set_y(self, y):
         self.y = y
+        if not isinstance(y, (int, float)):
+            raise Exception("Введенные данные не являются числом")
     def set_a(self, a):
         self.a = a
+        if a < 0:
+            raise Exception("Длина стороны меньше нуля")
+        if not isinstance(a, (int, float)):
+            raise Exception("Введенные данные не являются числом")
 
     def move(self, dx, dy):
         self.x += dx
@@ -65,7 +85,6 @@ def is_intersect(quad, pentagon):
     return False
 
 
-
 quad = Quad("001", 2, 4, 6)
 pentagon = Pentagon("002",1, -2, 1)
 quad.toString()
@@ -87,6 +106,5 @@ pentagon.move(-2, 1)
 quad.toString()
 pentagon.toString()
 
-
-
+quad.set_x("абв")
 
