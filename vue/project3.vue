@@ -1,17 +1,19 @@
-
-
 <template>
   <v-app>
-
 
     <!-- верхняя панель -->
     <v-container fluid>
       <v-app-bar
           color="blue"
-          dense
-          dark
       >
-        <v-app-bar-title>Магазин «ЧитайДеревня»</v-app-bar-title>
+        <v-app-bar-title>ЧитайДеревня</v-app-bar-title>
+        <v-row>
+          <v-col cols="12" offset="11">
+            <v-btn class="justify-end">
+              <v-icon>mdi-exit-to-app</v-icon>
+              exit</v-btn>
+          </v-col>
+        </v-row>
       </v-app-bar>
     </v-container>
 
@@ -19,7 +21,7 @@
     <v-container >
       <v-layout class="overflow-visible" >
 
-        <v-bottom-navigation v-model="value" color="primary" horizontal  style="padding-top: 10px; margin-top: 0px">
+        <v-bottom-navigation v-model="value" color="primary" horizontal>
 
           <v-btn>
             <v-icon>mdi-basket</v-icon>
@@ -39,12 +41,22 @@
       </v-layout>
     </v-container>
 
-    <v-container class="mx-auto pa-12 pb-8">
     <template>
+      <div style="padding-top: 0px; margin-top: 25px">
+        <v-card
+            class="mx-auto pa-14 pb-12"
+            elevation="10"
+            max-width="448"
+            rounded="lg"
+        >
       <v-file-input label="Список товаров для заказа" show-size></v-file-input>
       <v-file-input label="Отчет о закупках" show-size></v-file-input>
+          <v-btn color="blue" block>
+            Отправить
+          </v-btn>
+        </v-card>
+      </div>
     </template>
-      </v-container >
   </v-app>
 </template>
 
