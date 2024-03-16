@@ -1,7 +1,6 @@
 <template>
   <v-app>
 
-
     <!-- верхняя панель -->
     <v-container fluid>
     <v-app-bar
@@ -9,15 +8,16 @@
         dense
         dark
     >
-      <v-app-bar-title>Магазин «ЧитайДеревня»</v-app-bar-title>
+      <v-app-bar-title>ЧитайДеревня</v-app-bar-title>
     </v-app-bar>
     </v-container>
 
     <!-- панель навигации -->
     <v-container>
+
       <v-layout class="overflow-visible">
 
-        <v-bottom-navigation v-model="value" color="primary" horizontal style="padding-top: 10px; margin-top: 0px">
+        <v-bottom-navigation v-model="value" color="primary">
 
           <v-btn>
             <v-icon>mdi-basket</v-icon>
@@ -37,13 +37,34 @@
       </v-layout>
     </v-container>
 
+    <template>
+      <v-sheet
+          class="d-flex align-center justify-center flex-wrap text-center mx-auto px-4"
+          elevation="8"
+          height="100"
+          max-width="700"
+          width="100%"
+          rounded="lg"
+      >
+        <div>
+          <h2 class="text-h5 font-weight-black" style="color: #283593">
+            Вас приветствует магазин "ЧитайДеревня"!
+          </h2>
+
+          <p class="text-body-3 mb-1">
+            Чтобы продолжить работу, пожалуйста, авторизируйтесь.
+          </p>
+        </div>
+      </v-sheet>
+    </template>
+
     <!-- вход в аккаунт -->
     <template>
       <div>
         <v-img class="mx-auto my-6" max-width="228"></v-img>
 
         <v-card
-            class="mx-auto pa-12 pb-8"
+            class="mx-auto pa-14 pb-8"
             elevation="8"
             max-width="448"
             rounded="lg"
@@ -64,8 +85,6 @@
           </div>
 
           <v-text-field
-              :append-inner-icon="'mdi-eye'"
-              density="compact"
               placeholder="Введите пароль"
               prepend-inner-icon="mdi-lock-outline"
               variant="outlined"
