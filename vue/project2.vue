@@ -1,5 +1,3 @@
-
-
 <template>
   <v-app>
 
@@ -8,18 +6,24 @@
     <v-container fluid>
       <v-app-bar
           color="blue"
-          dense
-          dark
       >
-        <v-app-bar-title>Магазин «ЧитайДеревня»</v-app-bar-title>
+        <v-app-bar-title>ЧитайДеревня</v-app-bar-title>
+
+        <v-row>
+          <v-col cols="12" offset="11">
+            <v-btn class="justify-end">
+              <v-icon>mdi-exit-to-app</v-icon>
+              exit</v-btn>
+          </v-col>
+        </v-row>
       </v-app-bar>
     </v-container>
 
     <!-- панель навигации -->
-    <v-container >
-      <v-layout class="overflow-visible" >
+    <v-container>
+      <v-layout class="overflow-visible">
 
-        <v-bottom-navigation v-model="value" color="primary" horizontal  style="padding-top: 10px; margin-top: 0px">
+        <v-bottom-navigation v-model="value" color="primary" horizontal>
 
           <v-btn>
             <v-icon>mdi-basket</v-icon>
@@ -66,6 +70,12 @@
           Sort
           <v-tooltip activator="parent">Tooltip</v-tooltip>
         </v-btn>
+
+        <v-btn>
+          <v-icon>mdi-table-search</v-icon>
+          Search
+          <v-tooltip activator="parent">Tooltip</v-tooltip>
+        </v-btn>
       </div>
     </template>
 
@@ -74,44 +84,36 @@
     <template >
       <div class="d-flex justify-space-around" >
         <v-row class="d-flex justify-center" style="padding: 10px; margin: 5px">
-      <v-table style="padding: 10px; margin: 10px">
-        <thead>
-        <tr style="background-color: #1a237e; letter-spacing: 2px; ">
-          <th class="text-left" style="color: white; padding: 10px;">Название</th>
-          <th class="text-left" style="color: white; padding: 10px;">Автор</th>
-          <th class="text-left" style="color: white; padding: 10px;">Артикул</th>
-          <th class="text-left" style="color: white; padding: 10px;">Статус</th>
-          <th class="text-left" style="color: white; padding: 10px;">Закупка (руб)</th>
-          <th class="text-left" style="color: white; padding: 10px;">%</th>
-          <th class="text-left" style="color: white; padding: 10px;">Цена (руб)</th>
-          <th class="text-left" style="color: white; padding: 10px;">Доп. информация</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr v-for="item in books" :key="item.articul">
-          <td>{{ item.name }}</td>
-          <td>{{ item.author }}</td>
-          <td>{{ item.articul }}</td>
-          <td>{{ item.status }}</td>
-          <td>{{ item.purchase }}</td>
-          <td>{{ item.percent }}</td>
-          <td>{{ item.price }}</td>
-          <td>{{ item.information }}</td>
-        </tr>
-        </tbody>
-      </v-table>
+          <v-table style="padding: 10px; margin: 10px">
+            <thead>
+            <tr style="background-color: #1a237e; letter-spacing: 2px;" >
+              <th class="text-left" style="color: white; padding: 10px;">Название</th>
+              <th class="text-left" style="color: white; padding: 10px;">Автор</th>
+              <th class="text-left" style="color: white; padding: 10px;">Артикул</th>
+              <th class="text-left" style="color: white; padding: 10px;">Статус</th>
+              <th class="text-left" style="color: white; padding: 10px;">Закупка (руб)</th>
+              <th class="text-left" style="color: white; padding: 10px;">%</th>
+              <th class="text-left" style="color: white; padding: 10px;">Цена (руб)</th>
+              <th class="text-left" style="color: white; padding: 10px;">Доп. информация</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="item in books" :key="item.articul">
+              <td class="text-left" style="padding: 10px;">{{ item.name }}</td>
+              <td class="text-left" style="padding: 10px;">{{ item.author }}</td>
+              <td class="text-left" style="padding: 10px;">{{ item.articul }}</td>
+              <td class="text-left" style="padding: 10px;">{{ item.status }}</td>
+              <td class="text-left" style="padding: 10px;">{{ item.purchase }}</td>
+              <td class="text-left" style="padding: 10px;">{{ item.percent }}</td>
+              <td class="text-left" style="padding: 10px;">{{ item.price }}</td>
+              <td class="text-left" style="padding: 10px;">{{ item.information }}</td>
+            </tr>
+            </tbody>
+          </v-table>
 
         </v-row>
       </div>>
     </template>
-
-
-
-
-
-
-
-
   </v-app>
 </template>
 
